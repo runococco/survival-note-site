@@ -21,6 +21,6 @@ cols=""
 for i,(n,e,c,u,rows) in enumerate(COLS):
   extra=sp if i==0 else ex if i==1 else ""
   cols+=f'<section class="col {c}"><h2><span>{n}</span><small>{e}</small></h2>{"".join(row(r,u) for r in rows)}{extra}</section>'
-leg="".join(f'<span class="lg">{tile(k)}<b>{a}</b><i>{b}</i></span>' for k,a,b in [("B","青","通常食材"),("P","紫","有機野菜・果物・変異魚の肉"),("G","金","野菜・果物"),("W","白","卵・ミルク"),("S","虹","野菜・果物・卵・ミルク")])
+leg="".join(f'<span class="lg">{tile(k)}<b>{a}</b><i>{b}</i></span>' for k,a,b in [("B","青","通常食材"),("P","紫","有機野菜・果物・変異魚の肉"),("G","金","金色の野菜・果物"),("W","白","彩白・白彩の卵・ミルク"),("S","虹","星空・虹の野菜・果物・卵・ミルク")])
 tpl=open(os.environ.get('TPL','tpl.html')).read()
 open(os.environ.get('OUT','out.html'),'w').write(tpl.replace('%LEG%',leg).replace('%COLS%',cols))

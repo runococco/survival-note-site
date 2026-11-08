@@ -13,7 +13,7 @@ def row(r,u):
 FISH={"S":"hoshizora-gyoniku","N":"niji-gyoniku","O":"gyoou-gyoniku-v3","W":"saihaku-gyoniku","K":"king-meat-mix4b"}
 SP=[("SSKK","攻撃力+2.5","星空魚肉×2＋魚キング精肉×2"),("SNOW","攻撃力+2.5","星空魚肉＋虹の魚肉＋魚王の魚肉＋彩白の魚肉"),("WWON","アーマー値+2.5","彩白の魚肉×2＋星空以外の魚肉×2"),("NNNK","CR率+10%","虹の魚肉×3＋魚キング精肉×1")]
 sp='<div class="box sp"><h3><svg class="hi"><use href="#ifish"/></svg>特殊パターン：深淵の薄造り</h3><p class="bd">材料は魚キング精肉×4。<wbr>入れる肉でバフが変わる。</p>'+"".join(f'<div class="spr"><div class="fs">{"".join(f"<img src={chr(34)}{FISH[c]}.webp{chr(34)}>" for c in f)}</div><b class="sv"><small>{v.split("+")[0]}</small>+{v.split("+")[1]}</b><span class="lb">{l.replace("＋","＋<wbr>")}</span></div>' for f,v,l in SP)+'<p class="ng">カニ・イカ・ロブスターの肉は使えない</p></div>'
-ex='<div class="box ex"><h3><svg class="hi"><use href="#ibasket"/></svg>食材の例</h3>'+"".join(f'<div class="exr">{tile(k)}<div><b class="{c}">{n}</b><span>{d.replace("・","・<wbr>")}</span></div></div>' for k,n,c,d in [("G","金色","gld","かぼちゃ・桃・柿・トマト・タケノコ"),("S","星空・虹","sky","卵・アヒルの卵・ガチョウの卵・かぼちゃ・桃・柿・トマト・スイカ"),("W","彩白・白彩","wht","白彩の卵・彩白のアヒルの卵・彩白のガチョウの卵・白彩のミルク")])+'</div>'
+ex='<div class="box ex"><h3><svg class="hi"><use href="#ibasket"/></svg>食材の例</h3>'+"".join(f'<div class="exr">{tile(k)}<div><b class="{c}">{n}</b><span>{d.replace("・","・<wbr>")}</span></div></div>' for k,n,c,d in [("G","金色","gld","かぼちゃ・桃・柿・トマト・タケノコ"),("S","星空・虹","sky","星空の卵・星空のアヒルの卵・星空のガチョウの卵・星空のミルク・かぼちゃ・桃・柿・トマト・スイカ"),("W","彩白・白彩","wht","白彩の卵・彩白のアヒルの卵・彩白のガチョウの卵・白彩のミルク")])+'</div>'
 cols=""
 for i,(n,e,c,u,rows) in enumerate(COLS):
   extra=sp if i==0 else ex if i==1 else ""

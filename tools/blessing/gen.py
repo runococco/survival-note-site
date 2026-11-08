@@ -5,7 +5,10 @@ COLS=[
  ("星空の祝福","攻撃力","sky","+",[(7,"SSGG","星空2+金2","2.5"),(7,"SSSG","星空3+金1","2.5"),(7,"SSSS","星空4","2.5"),(6,"SSGP","星空2+金1+紫1","2.3"),(6,"SSSP","星空3+紫1","2.3"),(5,"SSPP","星空2+紫2","2.0"),(5,"SSGB","星空2+金1","2.0"),(5,"SSSB","星空3","2.0"),(4,"SGPB","星空1+金1+紫1","1.8"),(4,"SSPB","星空2+紫1","1.8"),(3,"SGBB","星空1+金1","1.5"),(3,"SSBB","星空2","1.5"),(2,"SPBB","星空1+紫1","1.3"),(1,"SBBB","星空1","1.0")]),
  ("彩白の祝福","アーマー値","wht","+",[(7,"WWWS","彩白3+星空1","2.5"),(7,"WWWG","彩白3+金1","2.5"),(7,"WWWW","彩白4","2.5"),(6,"WWSP","彩白2+星空1+紫1","2.3"),(6,"WWGP","彩白2+金1+紫1","2.3"),(6,"WWWP","彩白3+紫1","2.3"),(5,"WWSB","彩白2+星空1","2.0"),(5,"WWPP","彩白2+紫2","2.0"),(5,"WWGB","彩白2+金1","2.0"),(5,"WWWB","彩白3","2.0"),(4,"WWPB","彩白2+紫1","1.8"),(3,"WWBB","彩白2","1.5"),(2,"WPBB","彩白1+紫1","1.3"),(1,"WBBB","彩白1","1.0")]),
 ]
-def tile(k):return '<img class="t" src="ic_'+k+'.png">'
+import os
+TXT=os.environ.get('TXT')
+CH={'P':'紫','G':'金','S':'星','W':'彩','B':'青'}
+def tile(k):return ('<span class="t tx '+k+'">'+CH[k]+'</span>') if TXT else '<img class="t" src="ic_'+k+'.png">'
 def row(r,u):
   s,t,l,v=r
   val=(v+"%") if u=="%" else ("+"+v)
@@ -19,5 +22,5 @@ for i,(n,e,c,u,rows) in enumerate(COLS):
   extra=sp if i==0 else ex if i==1 else ""
   cols+=f'<section class="col {c}"><h2><span>{n}</span><small>{e}</small></h2>{"".join(row(r,u) for r in rows)}{extra}</section>'
 leg="".join(f'<span class="lg">{tile(k)}<b>{a}</b><i>{b}</i></span>' for k,a,b in [("B","青","通常食材"),("P","紫","有機・変異魚の肉"),("G","金","金色"),("W","白","彩白・白彩"),("S","虹","星空・虹")])
-tpl=open('tpl.html').read()
-open('out.html','w').write(tpl.replace('%LEG%',leg).replace('%COLS%',cols))
+tpl=open(os.environ.get('TPL','tpl.html')).read()
+open(os.environ.get('OUT','out.html'),'w').write(tpl.replace('%LEG%',leg).replace('%COLS%',cols))

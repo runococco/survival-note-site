@@ -1,18 +1,15 @@
 <!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts.css"><style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{width:1200px;background:#f3ecdf;font-family:"Zen Kaku Gothic New",sans-serif;color:#2a2f3d}
-.hd{position:relative;height:150px;background:linear-gradient(115deg,#0b111d 0%,#141d31 55%,#1d2740 100%);overflow:hidden;padding:30px 36px 0}
-.hd::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:22px 22px}
-.hd::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#7a54c9 0 25%,#d0a032 25% 50%,#3a4fb0 50% 75%,#2f8a80 75%)}
-.kick{position:relative;display:flex;align-items:center;gap:10px;color:#e3c27a;font-weight:700;font-size:15px;letter-spacing:.08em}
-.kick i{font-style:normal;color:#c0564b;letter-spacing:.3em;font-size:12px;border:1px solid rgba(192,86,75,.6);padding:2px 8px 2px 10px}
-.hd h1{position:relative;font-family:"Dela Gothic One";font-weight:400;font-size:48px;line-height:1.15;color:#fff;margin-top:8px;letter-spacing:.04em}
-.hd h1 small{font-family:"Zen Kaku Gothic New";font-weight:700;font-size:13px;letter-spacing:.32em;color:#8b95aa;margin-left:16px;vertical-align:middle}
-.em{position:absolute;right:34px;top:26px;display:flex;gap:10px}
-.eb{width:92px;height:94px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.eb .t{width:46px;height:46px}
-.eb b{font-size:13px;color:#fff;letter-spacing:.04em}
-.eb.org b{color:#c6a8ff}.eb.gld b{color:#f1cd6b}.eb.sky b{color:#a9b8ff}.eb.wht b{color:#8fe0d3}
+.hd{position:relative;height:178px;background:radial-gradient(circle at 12% 20%,#fff7e8 0,transparent 40%),linear-gradient(160deg,#fff3df 0%,#ffe2cc 55%,#ffd3bf 100%);overflow:hidden;padding:26px 36px 0}
+.hd .dots{position:absolute;inset:0;background-image:radial-gradient(rgba(232,140,110,.18) 2.2px,transparent 2.6px);background-size:26px 26px;background-position:0 0}
+.hd .gh{position:absolute;left:0;right:0;bottom:0;height:26px;background-color:#fff;background-image:linear-gradient(90deg,rgba(226,92,80,.55) 50%,transparent 50%),linear-gradient(rgba(226,92,80,.55) 50%,transparent 50%);background-size:26px 26px;border-top:3px solid #fff}
+.hd .gh::after{content:"";position:absolute;left:0;right:0;top:-9px;height:9px;background:radial-gradient(circle at 9px 0,transparent 8px,#fff 8.5px) 0 0/18px 9px repeat-x;transform:rotate(180deg)}
+.kick{position:relative;display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:5px 14px 5px 6px;color:#8a4b2e;font-family:"Zen Maru Gothic";font-weight:700;font-size:15px;box-shadow:0 2px 0 rgba(160,90,60,.15)}
+.kick i{font-style:normal;background:#e2685a;color:#fff;border-radius:999px;padding:2px 10px;font-size:13px}
+.hd h1{position:relative;font-family:"Zen Maru Gothic";font-weight:900;font-size:52px;line-height:1.15;color:#5b3424;margin-top:10px;letter-spacing:.04em;paint-order:stroke;-webkit-text-stroke:8px #fff;text-shadow:0 4px 0 rgba(200,110,80,.25)}
+.hd h1 em{font-style:normal;color:#e2685a}
+.art{position:absolute;right:30px;top:6px;width:380px;height:150px}
 .lgd{display:flex;flex-wrap:wrap;gap:8px 22px;padding:18px 28px 6px}
 .lg{display:flex;align-items:center;gap:7px;font-size:15px}.lg .t{width:30px;height:30px}.lg b{font-weight:900}.lg i{font-style:normal;color:#555b69;font-weight:500}
 .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:10px 20px 22px;align-items:start}
@@ -62,8 +59,24 @@ body{width:1200px;background:#f3ecdf;font-family:"Zen Kaku Gothic New",sans-seri
 <symbol id="ifish" viewBox="0 0 24 24"><path d="M3 12c3-5 9-6 14-3l4-3v12l-4-3c-5 3-11 2-14-3z" fill="#c0564b"/><circle cx="7.5" cy="11" r="1.1" fill="#fff"/></symbol>
 <symbol id="ibasket" viewBox="0 0 24 24"><path d="M3 10h18l-2 10H5z" fill="#d6a535"/><path d="M8 10l3-6M16 10l-3-6" stroke="#8a6414" stroke-width="2" stroke-linecap="round"/><path d="M7 13v4M12 13v4M17 13v4" stroke="#fff" stroke-width="1.4" opacity=".6"/></symbol>
 </defs></svg>
-<header class="hd"><div class="kick"><i>LIFEAFTER</i>料理の祝福 4種類（食材4枠の組み合わせ）</div><h1>祝福パターン一覧表<small>BLESSING PATTERNS</small></h1>
-<div class="em"><div class="eb org"><svg class="t"><use href="#tP"/></svg><b>有機</b></div><div class="eb gld"><svg class="t"><use href="#tG"/></svg><b>金色</b></div><div class="eb sky"><svg class="t"><use href="#tS"/></svg><b>星空</b></div><div class="eb wht"><svg class="t"><use href="#tW"/></svg><b>彩白</b></div></div></header>
+<header class="hd"><div class="dots"></div><div class="kick"><i>ライフアフター</i>料理の祝福 4種類（食材4枠の組み合わせ）</div><h1>祝福パターン<em>一覧表</em></h1><svg class="art" viewBox="0 0 380 150">
+<g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".95"><path d="M160 50c-8-8 6-14-2-24"/><path d="M266 50c8-8-6-14 2-24"/></g>
+<ellipse cx="212" cy="131" rx="86" ry="7" fill="#d98a6b" opacity=".35"/>
+<path d="M136 80h152l-9 38c-2 7-10 11-19 11h-96c-9 0-17-4-19-11z" fill="#f07b62"/>
+<path d="M136 80h152l-3 14H139z" fill="#d9604a"/>
+<rect x="124" y="70" width="176" height="14" rx="7" fill="#ffb199"/>
+<rect x="116" y="88" width="22" height="10" rx="5" fill="#d9604a"/><rect x="286" y="88" width="22" height="10" rx="5" fill="#d9604a"/>
+<path d="M150 70c4-26 28-38 62-38s58 12 62 38z" fill="#ffd3c4"/><path d="M150 70c4-26 28-38 62-38" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+<circle cx="212" cy="30" r="8" fill="#f07b62"/>
+<circle cx="190" cy="102" r="5" fill="#5b3424"/><circle cx="234" cy="102" r="5" fill="#5b3424"/><circle cx="192" cy="100" r="1.6" fill="#fff"/><circle cx="236" cy="100" r="1.6" fill="#fff"/>
+<path d="M204 110q8 7 16 0" fill="none" stroke="#5b3424" stroke-width="3.5" stroke-linecap="round"/>
+<ellipse cx="176" cy="113" rx="9" ry="5" fill="#ff9aa0" opacity=".8"/><ellipse cx="248" cy="113" rx="9" ry="5" fill="#ff9aa0" opacity=".8"/>
+<image href="ic_P.png" x="40" y="82" width="46" height="46" transform="rotate(-10 63 105)"/>
+<image href="ic_G.png" x="72" y="22" width="46" height="46" transform="rotate(8 95 45)"/>
+<image href="ic_S.png" x="314" y="18" width="46" height="46" transform="rotate(10 337 41)"/>
+<image href="ic_W.png" x="322" y="86" width="46" height="46" transform="rotate(-8 345 109)"/>
+<path d="M28 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#ffffff"/><path d="M292 10l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/><path d="M124 20c-3-4-9-1-6 4l6 6 6-6c3-5-3-8-6-4z" fill="#ff8c8c"/>
+</svg><div class="gh"></div></header>
 <div class="lgd">%LEG%</div>
 <div class="cols">%COLS%</div>
 </body></html>

@@ -952,12 +952,12 @@ h+=x.mt.map(function(m,j){return '<div class="calm" id="calm'+j+'">'+calImg(IM[m
 return h+'<div class="calsum" id="calsum"></div>'}
 function calUpd(){
 if(CAL.tab=="pay"){payUpd();return}if(CAL.sel===null)return;var x=DATA.semi.items[CAL.sel];if(!x.mt||!$("#calsum"))return;
-var n=Math.max(1,Math.floor(calNum(CAL.qty))||1),cost=0,buy=0,miss=0;
-x.mt.forEach(function(m,j){var all=!!CALS.a[m[0]],need=m[1]*n,own=all?need:calNum(CALS.o[m[0]]),pr=calNum(CALS.p[m[0]]),lack=Math.max(0,need-own),r=$("#calr"+j);$("#caln"+j).textContent=need.toLocaleString("ja-JP");cost+=need*pr;buy+=lack*pr;if(!pr)miss++;
+var n=Math.max(1,Math.floor(calNum(CAL.qty))||1),cost=0,buy=0,miss=0,ja="ja-JP";
+x.mt.forEach(function(m,j){var all=!!CALS.a[m[0]],need=m[1]*n,own=all?need:Math.floor(calNum(CALS.o[m[0]])),pr=Math.floor(calNum(CALS.p[m[0]])),lack=Math.max(0,need-own),r=$("#calr"+j);$("#caln"+j).textContent=need.toLocaleString("ja-JP");cost+=need*pr;buy+=lack*pr;if(!pr)miss++;
 $("#calm"+j).classList.toggle("ok",!lack);$("#calm"+j).classList.toggle("all",all);var oi=$("#calm"+j+" [data-own]");if(oi)oi.disabled=all;var os=$("#calm"+j+" [data-owns]");if(os){os.disabled=all;if(os.dataset.need!=need){os.dataset.need=need;os.innerHTML=calOop(need)}}
-r.innerHTML=lack?'<span class="calbuy">不足 <b>'+lack+'</b> 個を購入'+(pr?' ＝ <b>'+calYen(lack*pr)+'</b>':'')+'</span>':'<span class="calenough">'+(all?'全部所持':'所持で足りています')+'</span>'});
-var sp=calNum(CALS.s[x.n]),gross=sp*n,fee=gross*CAL.fee,net=gross-fee,pf=net-buy,pc=net-cost;function sg(v){return (v<0?'−':'+')+calYen(Math.abs(v))}
-$("#calsum").innerHTML='<div class="cs"><span>'+calIc("coin","sm")+'売上<small>交易売価 '+calYen(sp)+' × '+n+'個</small></span><b>'+calYen(gross)+'</b></div>'
+r.innerHTML=lack?'<span class="calbuy">不足 <b>'+lack.toLocaleString(ja)+'</b> 個を購入'+(pr?' ＝ <b>'+calYen(lack*pr)+'</b>':'')+'</span>':'<span class="calenough">'+(all?'全部所持':'所持で足りています')+'</span>'});
+var sp=Math.floor(calNum(CALS.s[x.n])),gross=sp*n,fee=Math.round(gross*CAL.fee),net=gross-fee,pf=net-buy,pc=net-cost;function sg(v){return (v<0?'−':'+')+calYen(Math.abs(v))}
+$("#calsum").innerHTML='<div class="cs"><span>'+calIc("coin","sm")+'売上<small>交易売価 '+calYen(sp)+' × '+n.toLocaleString(ja)+'個</small></span><b>'+calYen(gross)+'</b></div>'
 +'<div class="cs"><span>'+calIc("pct","sm")+'手数料<small>'+(CAL.fee==0.1?'連盟会員':'通常')+' '+Math.round(CAL.fee*100)+'%</small></span><b class="csm">−'+calYen(fee)+'</b></div>'
 +'<div class="cs"><span>'+calIc("cart","sm")+'購入総合計<small>足りない分を交易で買う</small></span><b class="csm">−'+calYen(buy)+'</b></div>'
 +'<div class="csbig'+(pf<0?' neg':'')+'">'+calIc(pf<0?"down":"up")+'<span>利益<small>売上 − 手数料 − 購入総合計</small></span><b>'+sg(pf)+'</b></div>'

@@ -13,8 +13,10 @@ COLS=[
 RK={'B':0,'P':1,'G':2,'W':3,'S':4,'N':5}
 def rkey(r):return (-r[0],[-RK[c] for c in sorted(r[1],key=lambda c:-RK[c])])
 # どの列も、その食材だけ4つのパターンを一番上にする（白さん指定）
-TOP={"org":"PPPP","gld":"GGGG","sky":"SSSS","wht":"WWWW","nij":"NNNN"}
-COLS=[(n,e,c,u,sorted(rows,key=lambda r,c=c:(r[1]!=TOP.get(c),rkey(r)))) for n,e,c,u,rows in COLS]
+# 星空は 星空4 → 星空3+金1 → 星空2+虹2 の順（白さん指定）
+TOP={"org":["PPPP"],"gld":["GGGG"],"sky":["SSSS","SSSG"],"wht":["WWWW"],"nij":["NNNN"]}
+def tkey(r,c):t=TOP.get(c,[]);return t.index(r[1]) if r[1] in t else len(t)
+COLS=[(n,e,c,u,sorted(rows,key=lambda r,c=c:(-r[0],tkey(r,c),rkey(r)))) for n,e,c,u,rows in COLS]
 import os
 TXT=os.environ.get('TXT')
 CH={'P':'紫','G':'金','S':'星','W':'彩','B':'青','N':'虹'}

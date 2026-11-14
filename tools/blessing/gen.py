@@ -1,5 +1,5 @@
-# 虹の祝福（CR率）: 白さんのゲーム画面で確認したパターン。☆1の数値は未確認
-NIJ=[(7,"NNNS","虹3+星空1","10"),(7,"NNNG","虹3+金1","10"),(7,"NNNN","虹4","10"),(6,"NNSP","虹2+星空1+紫1","9"),(6,"NNNP","虹3+紫1","9"),(5,"NNSB","虹2+星空1","8"),(5,"NNPP","虹2+紫2","8"),(5,"NNNB","虹3","8"),(4,"NNPB","虹2+紫1","7"),(3,"NNBB","虹2","6"),(2,"NPBB","虹1+紫1","5"),(1,"NBBB","虹1","")]
+# 虹の祝福（CR率）: 白さんのゲーム画面で確認したパターン。数値も確認済み
+NIJ=[(7,"NNNS","虹3+星空1","10"),(7,"NNNG","虹3+金1","10"),(7,"NNNN","虹4","10"),(6,"NNSP","虹2+星空1+紫1","9"),(6,"NNNP","虹3+紫1","9"),(5,"NNSB","虹2+星空1","8"),(5,"NNPP","虹2+紫2","8"),(5,"NNNB","虹3","8"),(4,"NNPB","虹2+紫1","7"),(3,"NNBB","虹2","6"),(2,"NPBB","虹1+紫1","5"),(1,"NBBB","虹1","4")]
 import json
 COLS=[
  ("有機の祝福","感染者ダメージ","org","%",[(7,"PPGS","紫2+金1+星空1","10"),(7,"PPPS","紫3+星空1","10"),(7,"PPPG","紫3+金1","10"),(7,"PPPP","紫4","10"),(5,"PPSB","紫2+星空1","8"),(5,"PPGB","紫2+金1","8"),(5,"PPPB","紫3","8"),(3,"PPBB","紫2","6"),(1,"PBBB","紫1","4")]),
@@ -21,10 +21,9 @@ FISH={"S":"hoshizora-gyoniku","N":"niji-gyoniku","O":"gyoou-gyoniku-v3","W":"sai
 SP=[("SSKK","攻撃力+2.5","星空魚肉×2＋魚キング精肉×2"),("SNOW","攻撃力+2.5","星空魚肉＋虹の魚肉＋魚王の魚肉＋彩白の魚肉"),("WWON","アーマー値+2.5","彩白の魚肉×2＋星空以外の魚肉×2"),("NNNK","CR率+10%","虹の魚肉×3＋魚キング精肉×1")]
 sp='<div class="box sp"><h3><svg class="hi"><use href="#ifish"/></svg>深淵の薄造り</h3>'+"".join(f'<div class="spr"><div class="fs">{"".join(f"<img src={chr(34)}{IMG}{FISH[c]}.webp{chr(34)}>" for c in f)}</div><b class="sv"><small>{v.split("+")[0]}</small>+{v.split("+")[1]}</b><span class="lb">{l.replace("＋","＋<wbr>")}</span></div>' for f,v,l in SP)+'</div>'
 ex='<div class="box sp"><h3><svg class="hi"><use href="#ifish"/></svg>カニキングの濃厚スープ</h3><div class="spr" style="border:0;padding-bottom:0"><div class="fs">'+('<img src="'+IMG+'kin-kaniniku-v3.webp">')*4+'</div><b class="sv"><small>CR回避率</small>+10%</b><span class="lb">魚王の蟹肉×4</span></div></div>'
-note='<div class="box note"><h3><img src="../../img/bless-ic-n.webp">虹の祝福メモ</h3><p>虹2＋星空2は、星空の祝福☆7になる。</p><p>灰色・緑の食材は、青と同じ扱いになる。</p></div>'
 cols=""
 for i,(n,e,c,u,rows) in enumerate(COLS):
-  extra=sp if i==0 else ex if i==1 else note if i==4 else ""
+  extra=sp if i==0 else ex if i==1 else ""
   cols+=f'<section class="col {c}"><h2><span>{n}</span><small>{e}</small></h2>{"".join(row(r,u) for r in rows)}{extra}</section>'
 leg="".join(f'<span class="lg">{tile(k)}<b>{a}</b><i>{b}</i></span>' for k,a,b in [("B","青","レア食材"),("P","紫","有機野菜・果物・変異魚の肉"),("G","金","金色の野菜・果物"),("W","白","彩白・白彩の卵・ミルク"),("S","星空","星空の野菜・果物・卵・ミルク"),("N","虹","虹大根・虹の魚肉")])
 tpl=open(os.environ.get('TPL','tpl.html')).read()

@@ -12,7 +12,9 @@ COLS=[
 # レア度 青<紫<金<彩白<星空<虹。一番レアな食材の数が多い順、同じなら次にレアな食材の数で比べる
 RK={'B':0,'P':1,'G':2,'W':3,'S':4,'N':5}
 def rkey(r):return (-r[0],[-RK[c] for c in sorted(r[1],key=lambda c:-RK[c])])
-COLS=[(n,e,c,u,sorted(rows,key=rkey)) for n,e,c,u,rows in COLS]
+# 星空の祝福は星空4を一番上にする（白さん指定）
+TOP={"sky":"SSSS"}
+COLS=[(n,e,c,u,sorted(rows,key=lambda r,c=c:(r[1]!=TOP.get(c),rkey(r)))) for n,e,c,u,rows in COLS]
 import os
 TXT=os.environ.get('TXT')
 CH={'P':'紫','G':'金','S':'星','W':'彩','B':'青','N':'虹'}

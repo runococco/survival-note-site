@@ -613,6 +613,7 @@ body[data-sec="tip"] #main .tt.tlt{font-size:clamp(1.1rem,6vw,2rem);letter-spaci
 .eqgr{grid-template-columns:repeat(3,minmax(0,1fr))}.calit .eqlv{color:var(--mu);font-weight:400;font-size:.6rem}.eqgr .calti,#eqp .calsi{background:#151515}
 .eqst{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:8px}.eqst div{padding:6px 8px;background:var(--sf);border:1px solid var(--ln)}.eqst small{display:block;font-size:.66rem;color:var(--mu)}.eqst b{font-size:.95rem}
 .csbig.cstot{margin:0 0 10px;background:color-mix(in srgb,#d9a35f 14%,var(--sf));border-color:#d9a35f}.csbig.cstot b{color:#f0c27a}
+.eqgh{margin:10px 0 -2px;font-size:.78rem;font-weight:700}.eqgh span{display:inline-block;padding:1px 8px;border:1px solid var(--ln);color:var(--mu)}.eqgh .eqev{border-color:var(--ac);color:var(--ac)}
 .calsel .eqev{display:inline-block;margin-top:4px;padding:1px 6px;border:1px solid var(--ac);color:var(--ac);font-size:.68rem;font-weight:700;line-height:1.5}
 .cal input[type=number]{-moz-appearance:textfield;appearance:textfield}.cal input[type=number]::-webkit-inner-spin-button,.cal input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 .calqw{display:flex}.calmf .calqw{flex:1;min-width:0}.calqw input{flex:1;border-right:0!important}
@@ -977,7 +978,9 @@ function eqList(){var up=CALS.eo=="a";return EQ.map(function(x,i){return[x,i]}).
 function eqBl(x){var m=/Lv(\d+)$/.exec(x.n);return m?+m[1]:0}
 function eqSr(x){var k=["基礎","天青","鉄筋"];for(var i=0;i<k.length;i++)if(x.n.indexOf(k[i])==0)return i;return 9}
 function eqGrid(){if(!CAL.elist)return "";var L=eqList();if(!L.length)return '<p class="calhint">この分類はまだ登録がありません。</p>';
-return '<div class="calgr eqgr">'+L.map(function(p){var x=p[0];return '<button type="button" class="calit'+(CAL.esel==p[1]?' on':'')+'" data-ep="'+p[1]+'">'+calImg(x.img,"calti")+'<span>'+esc(x.n)+'</span><em class="eqlv">Lv'+x.lv+(x.ev?'〜':'')+'</em></button>'}).join("")+'</div>'}
+function g(A){return '<div class="calgr eqgr">'+A.map(function(p){var x=p[0];return '<button type="button" class="calit'+(CAL.esel==p[1]?' on':'')+'" data-ep="'+p[1]+'">'+calImg(x.img,"calti")+'<span>'+esc(x.n)+'</span><em class="eqlv">Lv'+x.lv+(x.ev?'〜':'')+'</em></button>'}).join("")+'</div>'}
+var E=L.filter(function(p){return p[0].ev}),N=L.filter(function(p){return !p[0].ev});
+return (E.length?'<div class="eqgh"><span class="eqev">進化</span></div>'+g(E)+(N.length?'<div class="eqgh"><span>通常</span></div>':''):'')+(N.length?g(N):'')}
 function eqPanel(){
 if(CAL.esel===null)return '<p class="calhint">'+calIc("eq","big")+'タブで分類を選んで、一覧から装備を選んでください。</p>';
 var x=EQ[CAL.esel];

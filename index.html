@@ -977,12 +977,12 @@ function eqList(){var up=CALS.eo=="a";return EQ.map(function(x,i){return[x,i]}).
 function eqBl(x){var m=/Lv(\d+)$/.exec(x.n);return m?+m[1]:0}
 function eqSr(x){var k=["基礎","天青","鉄筋"];for(var i=0;i<k.length;i++)if(x.n.indexOf(k[i])==0)return i;return 9}
 function eqGrid(){if(!CAL.elist)return "";var L=eqList();if(!L.length)return '<p class="calhint">この分類はまだ登録がありません。</p>';
-return '<div class="calgr eqgr">'+L.map(function(p){var x=p[0];return '<button type="button" class="calit'+(CAL.esel==p[1]?' on':'')+'" data-ep="'+p[1]+'">'+calImg(x.img,"calti")+'<span>'+esc(x.n)+'</span><em class="eqlv">Lv'+x.lv+'</em></button>'}).join("")+'</div>'}
+return '<div class="calgr eqgr">'+L.map(function(p){var x=p[0];return '<button type="button" class="calit'+(CAL.esel==p[1]?' on':'')+'" data-ep="'+p[1]+'">'+calImg(x.img,"calti")+'<span>'+esc(x.n)+'</span><em class="eqlv">Lv'+x.lv+(x.ev?'〜':'')+'</em></button>'}).join("")+'</div>'}
 function eqPanel(){
 if(CAL.esel===null)return '<p class="calhint">'+calIc("eq","big")+'タブで分類を選んで、一覧から装備を選んでください。</p>';
 var x=EQ[CAL.esel];
 var h='<div class="calsel">'+calImg(x.img,"calsi")+'<div><small>'+esc(x.c)+'</small><b>'+esc(x.n)+'</b>'+(x.ev?'<span class="eqev">進化</span>':'')+'</div><button type="button" class="calre" data-ere>選び直す</button></div>';
-h+='<div class="eqst">'+[["戦闘熟練度","Lv"+x.lv]].concat(x.s||[]).map(function(s){return '<div><small>'+esc(s[0])+'</small><b>'+esc(s[1])+'</b></div>'}).join("")+'</div>';
+h+='<div class="eqst">'+[["戦闘熟練度","Lv"+x.lv+(x.ev?"〜":"")]].concat(x.s||[]).map(function(s){return '<div><small>'+esc(s[0])+'</small><b>'+(x.ev&&s[0]=="攻撃力"?'&nbsp;':esc(s[1]))+'</b></div>'}).join("")+'</div>';
 return h+calBody(x)}
 function semiView(){var h='<section class="cal"><div class="calh">'+calIc("semi","big")+'<span>半製品の利益計算<small>材料費と売値から、もうけを出します</small></span></div>';
 h+=calFee();

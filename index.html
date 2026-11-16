@@ -612,7 +612,7 @@ body[data-sec="tip"] #main .tt.tlt{font-size:clamp(1.1rem,6vw,2rem);letter-spaci
 .eqsort{margin-left:auto;display:inline-flex;align-items:center;gap:4px;padding:4px 8px;background:var(--sf);border:1px solid var(--ln);color:var(--tx);font:inherit;font-size:.72rem;font-weight:400;cursor:pointer}.eqsort .cico{width:16px;height:16px}
 .eqgr{grid-template-columns:repeat(3,minmax(0,1fr))}.calit .eqlv{color:var(--mu);font-weight:400;font-size:.6rem}.eqgr .calti,#eqp .calsi{background:#151515}
 .eqst{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:8px}.eqst div{padding:6px 8px;background:var(--sf);border:1px solid var(--ln)}.eqst small{display:block;font-size:.66rem;color:var(--mu)}.eqst b{font-size:.95rem}
-.eqev{margin:6px 0 0;font-size:.72rem;color:var(--mu)}
+.calsel .eqev{display:inline-block;margin-top:4px;padding:1px 6px;border:1px solid var(--ac);color:var(--ac);font-size:.68rem;font-weight:700;line-height:1.5}
 .cal input[type=number]{-moz-appearance:textfield;appearance:textfield}.cal input[type=number]::-webkit-inner-spin-button,.cal input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
 .calqw{display:flex}.calmf .calqw{flex:1;min-width:0}.calqw input{flex:1;border-right:0!important}
 .cal select#calqs,.cal select.calqs{flex:0 0 40px;width:40px;box-sizing:border-box;color:transparent;font-size:16px;padding:0;border:1px solid var(--ln);border-radius:0;background:var(--sf) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%238b95aa' stroke-width='2'%3E%3Cpath d='M2 4l4 4 4-4'/%3E%3C/svg%3E") center no-repeat;-webkit-appearance:none;appearance:none;cursor:pointer}
@@ -978,8 +978,8 @@ return '<div class="calgr eqgr">'+L.map(function(p){var x=p[0];return '<button t
 function eqPanel(){
 if(CAL.esel===null)return '<p class="calhint">'+calIc("eq","big")+'タブで分類を選んで、一覧から装備を選んでください。</p>';
 var x=EQ[CAL.esel];
-var h='<div class="calsel">'+calImg(x.img,"calsi")+'<div><small>'+esc(x.c)+'</small><b>'+esc(x.n)+'</b></div><button type="button" class="calre" data-ere>選び直す</button></div>';
-h+='<div class="eqst">'+[["戦闘熟練度","Lv"+x.lv]].concat(x.r?[["星","★"+x.r]]:[]).concat(x.s||[]).map(function(s){return '<div><small>'+esc(s[0])+'</small><b>'+esc(s[1])+'</b></div>'}).join("")+'</div>'+(x.ev?'<p class="eqev">製作回数に制限がある製法書です。</p>':'');
+var h='<div class="calsel">'+calImg(x.img,"calsi")+'<div><small>'+esc(x.c)+'</small><b>'+esc(x.n)+'</b>'+(x.ev?'<span class="eqev">進化</span>':'')+'</div><button type="button" class="calre" data-ere>選び直す</button></div>';
+h+='<div class="eqst">'+[["戦闘熟練度","Lv"+x.lv]].concat(x.s||[]).map(function(s){return '<div><small>'+esc(s[0])+'</small><b>'+esc(s[1])+'</b></div>'}).join("")+'</div>';
 return h+calBody(x)}
 function semiView(){var h='<section class="cal"><div class="calh">'+calIc("semi","big")+'<span>半製品の利益計算<small>材料費と売値から、もうけを出します</small></span></div>';
 h+=calFee();

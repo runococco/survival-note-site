@@ -612,7 +612,8 @@ body[data-sec="tip"] #main .tt.tlt{font-size:clamp(1.1rem,6vw,2rem);letter-spaci
 .eqsort{margin-left:auto;display:inline-flex;align-items:center;gap:4px;padding:4px 8px;background:var(--sf);border:1px solid var(--ln);color:var(--tx);font:inherit;font-size:.72rem;font-weight:400;cursor:pointer}.eqsort .cico{width:16px;height:16px}
 .eqgr{grid-template-columns:repeat(3,minmax(0,1fr))}.calit .eqlv{color:var(--mu);font-weight:400;font-size:.6rem}.eqgr .calti,#eqp .calsi{background:#151515}
 .eqst{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:6px;margin-top:8px}.eqst div{padding:6px 8px;background:var(--sf);border:1px solid var(--ln)}.eqst small{display:block;font-size:.66rem;color:var(--mu)}.eqst b{font-size:.95rem}
-.calpk{margin:14px 0 8px;font-size:.85rem;color:var(--mu)}.calpg{display:grid;gap:10px}.calpc{display:flex;align-items:center;gap:12px;width:100%;padding:14px 12px;background:var(--sf);border:1px solid var(--ln);color:var(--tx);font:inherit;text-align:left;cursor:pointer}.calpc:hover{border-color:var(--ac)}.calpc>span{flex:1;min-width:0}.calpc b{display:block;font-size:1rem}.calpc small{display:block;margin-top:3px;font-size:.72rem;line-height:1.5;color:var(--mu)}.calpc>i{font-style:normal;font-size:1.4rem;color:var(--mu)}
+.calpk{margin:14px 0 8px;font-size:.85rem;color:var(--mu)}.calpg{display:grid;gap:10px}.mmsw{margin:0 0 8px}.calit .mmck{position:absolute;top:3px;right:3px;width:16px;height:16px;background:var(--ac);border-radius:50%}.calit .mmck:after{content:"";position:absolute;left:5.5px;top:2.5px;width:3.5px;height:7px;border:solid #0b0f18;border-width:0 2px 2px 0;transform:rotate(45deg)}.mmeq .calti,.mmeq .calmi{background:#151515}.mmgr .calit em.eqlv+em.eqlv{display:none}.mmadd{display:flex;align-items:center;gap:12px;width:100%;margin-top:8px;padding:10px 12px;background:var(--sf);border:1px dashed var(--ac);color:var(--tx);font:inherit;text-align:left;cursor:pointer}.mmadd img{width:72px;aspect-ratio:2/1;object-fit:contain;flex:none}.mmadd span{flex:1;min-width:0}.mmadd b{display:block;font-size:.9rem}.mmadd small{display:block;margin-top:2px;font-size:.7rem;line-height:1.5;color:var(--mu)}.mmadd>i{font-style:normal;font-size:1.3rem;color:var(--ac);flex:none}.mmsr{margin:4px 0 0;font-size:.75rem;color:var(--mu)}.mmr .calmn span{display:block}.mmr .calmn input{padding:6px 8px;font-size:16px;text-align:left}.mmdel{align-self:start;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:none;border:1px solid var(--ln);color:var(--mu);cursor:pointer;padding:0}.mmdel svg{width:16px;height:16px}.mmnp{color:#e0b070}.mmn{margin-left:auto;font-weight:400;font-size:.75rem;color:var(--mu)}#mmft[hidden]{display:none}.mmclr{display:block;width:100%;margin-top:8px;padding:10px;background:none;border:1px dashed var(--ln);color:var(--mu);font:inherit;font-size:.8rem;cursor:pointer}.mmclr.on{border-color:#d9625f;color:#f08a86;font-weight:700}
+.calpc{display:flex;align-items:center;gap:12px;width:100%;padding:14px 12px;background:var(--sf);border:1px solid var(--ln);color:var(--tx);font:inherit;text-align:left;cursor:pointer}.calpc:hover{border-color:var(--ac)}.calpc>span{flex:1;min-width:0}.calpc b{display:block;font-size:1rem}.calpc small{display:block;margin-top:3px;font-size:.72rem;line-height:1.5;color:var(--mu)}.calpc>i{font-style:normal;font-size:1.4rem;color:var(--mu)}
 .csbe{display:flex;align-items:center;gap:10px;margin-top:8px;padding:10px 12px;background:var(--sf);border:1px solid #7fa7c9}.csbe>span{flex:1;min-width:0;font-weight:700;font-size:.85rem}.csbe>span small{display:block;font-weight:400;font-size:.66rem;line-height:1.5;color:var(--mu)}.csbe>b{text-align:right;font-size:1.25rem;color:#a9c8e6;white-space:nowrap}.csbe>b small{font-size:.66rem;font-weight:400;color:var(--mu);margin:0 2px}.csbe>b em{display:block;font-style:normal;font-size:.66rem;font-weight:400;color:var(--mu)}
 .csbig.cstot{margin:0 0 10px;background:color-mix(in srgb,#d9a35f 14%,var(--sf));border-color:#d9a35f}.csbig.cstot b{color:#f0c27a}
 .eqgh{margin:10px 0 -2px;font-size:.78rem;font-weight:700}.eqgh span{display:inline-block;padding:1px 8px;border:1px solid var(--ln);color:var(--mu)}.eqgh .eqev{border-color:var(--ac);color:var(--ac)}
@@ -965,13 +966,13 @@ function calNum(v){v=parseFloat(v);return isFinite(v)&&v>0?v:0}
 function calYen(n){return Math.round(n).toLocaleString("ja-JP")}
 function calCat(c){for(var i=0;i<CALK.length;i++)if(CALK[i][1]==(c||""))return CALK[i][0];return "全般"}
 function calImg(u,c){return u?'<img loading="lazy" class="'+c+'" src="'+u+'" alt="">':'<i class="'+c+' calni" aria-hidden="true"></i>'}
-var CALT=[["semi","半製品の利益","semi","材料費と売値から、半製品を作ったときのもうけを出します。"],["eq","武器・装備の原価","eq","武器や防具に必要な素材の数と、材料費の合計を出します。"],["pay","課金額","coin","足りない信用Ptから、いちばん安い課金の仕方を出します。"]];
+var CALT=[["semi","半製品の利益","semi","材料費と売値から、半製品を作ったときのもうけを出します。"],["eq","武器・装備の原価","eq","武器や防具に必要な素材の数と、材料費の合計を出します。"],["pay","課金額","coin","足りない信用Ptから、いちばん安い課金の仕方を出します。"],["memo","お買い物メモ","cart","買う物を画像から選んで、必要数と交易の値段から合計金額を出します。"]];
 function calView(){
 if(!CAL.tab)return '<button class="back" id="back"><span class="bka">‹</span>戻る</button><h2 class="tt">計算ツール</h2><div class="ul">CALCULATOR</div><p class="calpk">使いたい計算ツールを選んでください。</p><div class="calpg">'+CALT.map(function(t){return '<button type="button" class="calpc" data-cgo="'+t[0]+'">'+calIc(t[2],"big")+'<span><b>'+t[1]+'</b><small>'+t[3]+'</small></span><i aria-hidden="true">›</i></button>'}).join("")+'</div>';
 var h='<button class="back" id="back"><span class="bka">‹</span>戻る</button><h2 class="tt">計算ツール</h2><div class="ul">CALCULATOR</div><div id="calb">'+calTabView()+'</div>';
 return h}
 function calFee(){return '<div class="calst"><b>1</b>販売手数料</div><div class="calfee" role="radiogroup" aria-label="販売手数料">'+[[0.15,"通常","売上の15%",""],[0.1,"連盟会員","売上の10%","vip"]].map(function(f){return '<button type="button" role="radio" class="calf" data-cf="'+f[0]+'" aria-checked="'+(CAL.fee==f[0])+'"><i aria-hidden="true"></i><span><b>'+f[1]+'</b><small>手数料 '+f[2]+'</small></span>'+(f[3]?calIc(f[3]):'')+'</button>'}).join("")+'</div>'}
-function calTabView(){return CAL.tab=="pay"?payView():CAL.tab=="eq"?eqView():semiView()}
+function calTabView(){return CAL.tab=="memo"?mmView():CAL.tab=="pay"?payView():CAL.tab=="eq"?eqView():semiView()}
 function calCur(){return CAL.tab=="eq"?(CAL.esel===null?null:EQ[CAL.esel]):(CAL.sel===null?null:DATA.semi.items[CAL.sel])}
 function eqView(){var h='<section class="cal"><div class="calh">'+calIc("eq","big")+'<span>武器・装備の原価計算<small>必要な素材の数と、交易で買ったときの原価を出します</small></span></div>';
 h+=calFee();
@@ -1024,7 +1025,7 @@ h+='<div class="calst"><b>4</b>材料</div><p class="calnote">手持ちの数を
 h+=x.mt.map(function(m,j){return '<div class="calm" id="calm'+j+'">'+calImg(IM[m[0]]||matImg(m[0]),"calmi")+'<div class="calmn"><b>'+esc(m[0])+'</b><span>必要 <em id="caln'+j+'"></em> 個</span><p class="calmr" id="calr'+j+'"></p></div><label class="calall"><input type="checkbox" data-all="'+esc(m[0])+'"'+(CALS.a[m[0]]?' checked':'')+'><i aria-hidden="true"></i>全部所持</label><div class="calmf"><label><span>所持</span><div class="calqw"><input type="number" inputmode="numeric" min="0" data-own="'+esc(m[0])+'" value="'+esc(CALS.o[m[0]]||"")+'" placeholder="0"><select class="calqs" data-owns="'+esc(m[0])+'" aria-label="所持数を一覧から選ぶ"></select></div></label><label><span>交易単価</span><input type="number" inputmode="numeric" min="0" data-pr="'+esc(m[0])+'" value="'+esc(CALS.p[m[0]]||"")+'" placeholder="0"></label></div></div>'}).join("");
 return h+'<div class="calsum" id="calsum"></div><button type="button" class="calsv" data-csv><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>結果を画像で保存</button>'}
 function calUpd(){
-if(CAL.tab=="pay"){payUpd();return}var x=calCur();if(!x||!x.mt||!$("#calsum"))return;
+if(CAL.tab=="pay"){payUpd();return}if(CAL.tab=="memo"){mmUpd();return}var x=calCur();if(!x||!x.mt||!$("#calsum"))return;
 var q=Math.max(1,Math.floor(calNum(CAL.qty))||1),y=x.y||1,cr=Math.ceil(q/y),n=cr*y,cost=0,buy=0,miss=0,ja="ja-JP";
 x.mt.forEach(function(m,j){var all=!!CALS.a[m[0]],need=m[1]*cr,own=all?need:Math.floor(calNum(CALS.o[m[0]])),pr=Math.floor(calNum(CALS.p[m[0]])),lack=Math.max(0,need-own),r=$("#calr"+j);$("#caln"+j).textContent=need.toLocaleString("ja-JP");cost+=need*pr;buy+=lack*pr;if(!pr&&lack)miss++;
 $("#calm"+j).classList.toggle("ok",!lack);$("#calm"+j).classList.toggle("all",all);var oi=$("#calm"+j+" [data-own]");if(oi)oi.disabled=all;var os=$("#calm"+j+" [data-owns]");var pi=$("#calm"+j+" [data-pr]");if(pi){if(!lack){if(!pi.disabled){pi.disabled=true;pi.value="0"}}else if(pi.disabled){pi.disabled=false;pi.value=CALS.p[m[0]]||""}}if(os){os.disabled=all;if(os.dataset.need!=need){os.dataset.need=need;os.innerHTML=calOop(need)}}
@@ -1045,7 +1046,7 @@ var R=x.mt.map(function(m){var all=!!CALS.a[m[0]],need=m[1]*cr,own=all?need:Math
 var sp=Math.floor(calNum(CALS.s[x.n])),gross=sp*n,fee=Math.round(gross*CAL.fee),net=gross-fee;
 return {x:x,n:n,cr:cr,y:y,R:R,sp:sp,gross:gross,fee:fee,buy:buy,cost:cost,pf:net-buy,pc:net-cost,be:calBe(cost,n,CAL.fee)}}
 function calLoad(u){return new Promise(function(ok){if(!u){ok(null);return}var i=new Image();i.onload=function(){ok(i)};i.onerror=function(){ok(null)};i.src=u})}
-function calShot(){var D=calShotData();if(!D)return;Promise.all([calLoad(D.x.img)].concat(D.R.map(function(r){return calLoad(r.img)}))).then(function(I){
+function calShot(){if(CAL.tab=="memo"){mmShot();return}var D=calShotData();if(!D)return;Promise.all([calLoad(D.x.img)].concat(D.R.map(function(r){return calLoad(r.img)}))).then(function(I){
 var S=2,W=540,P=20,F='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif',ja="ja-JP",eq=CAL.tab=="eq",TX="#e3e7ef",MU="#8b95aa",SF="#121825",LN="#273047";
 function sg(v){return (v<0?"−":"+")+calYen(Math.abs(v))}
 var rows=[];if(eq)rows.push(["材料費の合計","必要な素材 × 交易単価",calYen(D.cost),"#f0c27a","#2a2320","#d9a35f",1]);
@@ -1074,6 +1075,80 @@ function calShow(c,nm){c.toBlob(function(bl){if(!bl)return;var u=URL.createObjec
 d.innerHTML='<div class="csvb"><img src="'+u+'" alt="計算結果の画像"><p>画像を長押ししても保存できます。</p><div><button type="button" class="csvs">保存・共有</button><button type="button" class="csvx">閉じる</button></div></div>';document.body.appendChild(d);
 function cl(){d.remove();URL.revokeObjectURL(u)}d.querySelector(".csvx").onclick=cl;d.onclick=function(e){if(e.target==d)cl()};
 d.querySelector(".csvs").onclick=function(){var f=null;try{f=new File([bl],fn,{type:"image/png"})}catch(e){}if(f&&navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f]}).catch(function(){})}else{var a=document.createElement("a");a.href=u;a.download=fn;document.body.appendChild(a);a.click();a.remove()}}},"image/png")}
+/* お買い物メモ（買う物を画像から選んで、必要数と交易単価から合計金額を出す） */
+var MMK=[["eq","武器・装備"],["mat","素材"],["semi","半製品"],["core","コア"],["x","その他"]],MMQ="img/any-food.webp",MMR=["基礎","中級","高級","極上","その他"],MMC=null,MMI=null;
+CALS.m=CALS.m||[];CAL.mk=CALS.mk||"mat";CAL.mc={};CAL.mq="";CAL.mw=null;CAL.mclr=0;
+function mmCoreImg(x){var r={"基礎":"#9aa3b5","中級":"#7f9fc6","高級":"#a58fc6","極上":"#c8b264"}[x[1]]||"#8a93a6",e=CEC[x[2]]||"#c9ced8",ic=(CEI[x[2]]||"").replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" x="98" y="38" width="44" height="44" ').replace(/currentColor/g,e);
+return "data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 120"><rect width="240" height="120" fill="#1c2230"/><path d="M120 10l44 25v50l-44 25-44-25V35z" fill="'+r+'" fill-opacity=".2" stroke="'+r+'" stroke-width="4" stroke-linejoin="round"/>'+ic+'</svg>')}
+function mmCat(){if(MMC)return MMC;var C={eq:EQ.map(function(x){return {k:"eq",n:x.n,img:x.img,c:x.c,lv:x.lv,ev:x.ev,o:x}}),mat:[],semi:DATA.semi.items.map(function(x){return {k:"semi",n:x.n,img:x.img,c:calCat(x.c)}}),core:DATA.core.list.map(function(x){return {k:"core",n:x[0],img:mmCoreImg(x),c:MMR.indexOf(x[1])>=0?x[1]:"その他"}})},s={};
+DATA.item.items.forEach(function(x){if(!x.n||s[x.n])return;s[x.n]=1;C.mat.push({k:"mat",n:x.n,img:x.img||(x.v&&x.v[0]&&x.v[0].img)||matImg(x.n),c:x.c})});
+MMI={};["eq","mat","semi","core"].forEach(function(k){C[k].forEach(function(x){MMI[k+"|"+x.n]=x})});return MMC=C}
+function mmSubs(k){var C=mmCat();if(k=="mat")return DATA.item.cats;if(k=="semi")return CALK.map(function(c){return c[0]});if(k=="core")return MMR.filter(function(r){return C.core.some(function(x){return x.c==r})});return []}
+function mmSub(k){if(k=="eq")return CAL.mc.eq||EQK[0][0];var S=mmSubs(k);return S.indexOf(CAL.mc[k])>=0?CAL.mc[k]:S[0]}
+function mmCnt(k,c){return mmCat()[k].filter(function(x){return c.indexOf(x.c)>=0}).length}
+function mmTabs(){var k=CAL.mk,h='<div class="eqcat eqtop mmk" role="tablist" aria-label="買う物の種類">'+MMK.map(function(t){var on=t[0]==k;return '<button type="button" role="tab" class="calk'+(on?' on':'')+'" data-mk="'+t[0]+'" aria-selected="'+on+'">'+t[1]+(t[0]!="x"?'<small>'+mmCat()[t[0]].length+'</small>':'')+'</button>'}).join("")+'</div>';
+function row(L,a,lb){return '<div class="eqcat eqsub" role="tablist" aria-label="'+lb+'">'+L.map(function(c){var on=c[2];return '<button type="button" role="tab" class="calk'+(on?' on':'')+'" data-'+a+'="'+esc(c[0])+'" aria-selected="'+on+'">'+esc(c[1])+'<small>'+c[3]+'</small></button>'}).join("")+'</div>'}
+if(k=="eq"){var cur=mmSub("eq"),g=eqGr(cur);h+=row(EQG.map(function(G){return [G[0],G[0],G==g,mmCnt("eq",G[1])]}),"mg","装備の分類");if(g[1].length>1)h+=row(g[1].map(function(c){return [c,c,c==cur,mmCnt("eq",[c])]}),"mc",g[0]+"の種類")}
+else if(k!="x"){var s=mmSub(k);h+=row(mmSubs(k).map(function(c){return [c,c,c==s,mmCnt(k,[c])]}),"mc","分類")}
+return h}
+function mmHas(id){for(var i=0;i<CALS.m.length;i++)if(CALS.m[i].id==id)return i;return -1}
+function mmTile(x,srch){var id=x.k+"|"+x.n,on=mmHas(id)>=0;return '<button type="button" class="calit'+(on?' on':'')+(x.k=="eq"?' mmeq':'')+'" data-ma="'+esc(id)+'" aria-pressed="'+on+'">'+calImg(x.img,"calti")+'<span>'+esc(x.n)+'</span>'+(x.k=="eq"?'<em class="eqlv">Lv'+x.lv+(x.ev?'〜':'')+'</em>':'')+(srch?'<em class="eqlv">'+mmKL(x.k)+'</em>':'')+(on?'<i class="mmck" aria-hidden="true"></i>':'')+'</button>'}
+function mmAddBtn(n){return '<button type="button" class="mmadd" data-mx="'+esc(n||"")+'"><img src="'+MMQ+'" alt=""><span><b>'+(n?'「'+esc(n)+'」をその他で追加':'その他を追加')+'</b><small>一覧にない物は、名前を自由に入れて追加できます。</small></span><i aria-hidden="true">＋</i></button>'}
+function mmGrid(){var C=mmCat(),q=CAL.mq,L;
+if(q){L=[];MMK.forEach(function(t){(C[t[0]]||[]).forEach(function(x){if(x.n.indexOf(q)>=0)L.push(x)})});
+return '<p class="mmsr">「'+esc(q)+'」の検索結果 '+L.length+'件</p>'+(L.length?'<div class="calgr mmgr">'+L.slice(0,80).map(function(x){return mmTile(x,1)}).join("")+'</div>':'')+(L.length>80?'<p class="calnote">ほかに'+(L.length-80)+'件あります。名前をもう少し入れてください。</p>':'')+mmAddBtn(q)}
+var k=CAL.mk;if(k=="x")return mmAddBtn("");var c=mmSub(k);L=C[k].filter(function(x){return x.c==c});
+if(k=="eq")L.sort(function(a,b){return (b.lv-a.lv)||(eqBl(b.o)-eqBl(a.o))||(eqSr(a.o)-eqSr(b.o))});
+if(!L.length)return '<p class="calhint">この分類はまだ登録がありません。</p>';
+return '<div class="calgr mmgr'+(k=="eq"?' eqgr':'')+'">'+L.map(function(x){return mmTile(x)}).join("")+'</div>'}
+function mmKL(k){for(var i=0;i<MMK.length;i++)if(MMK[i][0]==k)return MMK[i][1];return ""}
+function mmImg(r){if(r.k=="x")return MMQ;mmCat();var x=MMI[r.k+"|"+r.n];return x?x.img:""}
+function mmList(){var M=CALS.m;if(!M.length)return '<p class="calhint">'+calIc("cart","big")+'上の一覧から買う物をタップすると、ここに追加されます。</p>';
+return M.map(function(r,j){return '<div class="calm mmr'+(r.k=="eq"?' mmeq':'')+'">'+calImg(mmImg(r),"calmi")+'<div class="calmn">'+(r.k=="x"?'<input type="text" class="mmnm" data-mn="'+j+'" placeholder="名前を入力" maxlength="40" value="'+esc(r.n)+'" aria-label="名前">':'<b>'+esc(r.n)+'</b>')+'<span>'+mmKL(r.k)+'</span></div><button type="button" class="mmdel" data-md="'+j+'" aria-label="リストから消す"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="calmf"><label><span>必要数</span><div class="calqw"><input type="number" inputmode="numeric" min="0" data-mq="'+j+'" value="'+esc(r.q)+'" placeholder="0"><select class="calqs" data-mqs="'+j+'" aria-label="必要数を一覧から選ぶ">'+calQop()+'</select></div></label><label><span>交易単価</span><input type="number" inputmode="numeric" min="0" data-mp="'+j+'" value="'+esc(r.p)+'" placeholder="0"></label></div><p class="calmr" id="mmr'+j+'"></p></div>'}).join("")}
+function mmView(){var h='<section class="cal mm"><div class="calh">'+calIc("cart","big")+'<span>お買い物メモ<small>買う物の数と交易の値段から、合計金額を出します</small></span></div>';
+h+='<div class="calst"><b>1</b>買う物を選ぶ</div><div class="sw mmsw"><input id="mmq" class="search" type="search" placeholder="名前で探す" autocomplete="off" value="'+esc(CAL.mq)+'"></div><div id="mmc">'+(CAL.mq?'':mmTabs())+'</div><div id="mmg">'+mmGrid()+'</div>';
+h+='<div class="calst"><b>2</b>買う物リスト<span class="mmn" id="mmn"></span></div><p class="calnote">必要数と交易単価（1個の値段）を入れると、合計金額が出ます。</p><div id="mml">'+mmList()+'</div>';
+return h+'<div id="mmft"><div class="calsum" id="calsum"></div><button type="button" class="calsv" data-csv><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>メモを画像で保存</button><button type="button" class="mmclr" data-mclr>リストを全部消す</button></div></section>'}
+function mmRe(){var c=$("#mmc"),g=$("#mmg");if(c)c.innerHTML=CAL.mq?'':mmTabs();if(g)g.innerHTML=mmGrid()}
+function mmLs(){var l=$("#mml");if(l)l.innerHTML=mmList();CAL.mclr=0;mmUpd()}
+function mmTot(){var t=0,c=0,miss=0;CALS.m.forEach(function(r){var q=Math.floor(calNum(r.q)),p=Math.floor(calNum(r.p));t+=q*p;c+=q;if(q&&!p)miss++});return {t:t,c:c,miss:miss}}
+function mmUpd(){var o=$("#calsum");if(!o)return;var M=CALS.m,ja="ja-JP",T=mmTot();$("#mmn").textContent=M.length?M.length+"品目":"";$("#mmft").hidden=!M.length;
+M.forEach(function(r,j){var q=Math.floor(calNum(r.q)),p=Math.floor(calNum(r.p)),e=$("#mmr"+j);if(e)e.innerHTML=!q?'<span>必要数を入れてください</span>':p?'<span>'+q.toLocaleString(ja)+'個 × '+calYen(p)+'</span><span class="calbuy">小計 <b>'+calYen(q*p)+'</b></span>':'<span>'+q.toLocaleString(ja)+'個</span><span class="mmnp">交易単価が未入力です</span>'});
+var b=$("[data-mclr]");if(b)b.textContent=CAL.mclr?"もう一度タップで全部消す":"リストを全部消す";if(b)b.classList.toggle("on",!!CAL.mclr);
+o.innerHTML='<div class="csbig cstot">'+calIc("cart")+'<span>合計金額<small>'+M.length+'品目・全部で'+T.c.toLocaleString(ja)+'個</small></span><b>'+calYen(T.t)+'</b></div>'+(T.miss?'<p class="csw">交易単価が未入力の物が'+T.miss+'つあります（0として計算）。</p>':'')}
+function mmTog(id){var i=mmHas(id);if(i>=0)CALS.m.splice(i,1);else{var p=id.indexOf("|"),k=id.slice(0,p),n=id.slice(p+1);CALS.m.push({id:id,k:k,n:n,q:"1",p:(k=="mat"||k=="semi")&&CALS.p[n]?CALS.p[n]:""})}calSave();mmRe();mmLs()}
+function mmShot(){var M=CALS.m;if(!M.length)return;Promise.all(M.map(function(r){return calLoad(mmImg(r))})).then(function(I){
+var S=2,W=540,P=20,F='"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif',ja="ja-JP",TX="#e3e7ef",MU="#8b95aa",SF="#121825",LN="#273047",T=mmTot();
+var hH=78,mH=58,H=P+hH+34+M.length*mH+14+64+(T.miss?26:0)+40;
+var c=document.createElement("canvas");c.width=W*S;c.height=H*S;var g=c.getContext("2d");g.scale(S,S);g.fillStyle="#0a0e17";g.fillRect(0,0,W,H);
+function img(im,x,y,w,h,bg){if(bg){g.fillStyle=bg;g.fillRect(x,y,w,h)}if(!im||!im.naturalWidth)return;var r=Math.min(w/im.naturalWidth,h/im.naturalHeight),iw=im.naturalWidth*r,ih=im.naturalHeight*r;g.drawImage(im,x+(w-iw)/2,y+(h-ih)/2,iw,ih)}
+function t(s,x,y,sz,col,wt,al,mx){g.font=(wt||400)+" "+sz+"px "+F;if(mx)while(sz>9&&g.measureText(s).width>mx){sz--;g.font=(wt||400)+" "+sz+"px "+F}g.fillStyle=col;g.textAlign=al||"left";g.textBaseline="middle";g.fillText(s,x,y)}
+function box(x,y,w,h,bg,bd){g.fillStyle=bg;g.fillRect(x,y,w,h);if(bd){g.strokeStyle=bd;g.lineWidth=1;g.strokeRect(x+.5,y+.5,w-1,h-1)}}
+var y=P;box(P,y,W-2*P,hH-12,SF,LN);t("計算ツール",P+16,y+20,12,MU);t("お買い物メモ",P+16,y+44,20,TX,700);t(M.length+"品目・全部で"+T.c.toLocaleString(ja)+"個",W-P-16,y+44,12,MU,400,"right");
+y+=hH;t("買う物リスト",P,y+8,14,TX,700);y+=26;
+M.forEach(function(r,j){var R=W-P-12,q=Math.floor(calNum(r.q)),p=Math.floor(calNum(r.p));box(P,y,W-2*P,mH-6,SF,LN);img(I[j],P+8,y+6,72,mH-18,r.k=="eq"?"#151515":"");
+t(r.n||"（名前なし）",P+92,y+16,14,TX,700,"left",R-P-92-130);t(mmKL(r.k)+"　必要 "+q.toLocaleString(ja)+"個",P+92,y+36,11,MU,400,"left",R-P-92-130);
+if(p){t(calYen(q*p),R,y+16,14,TX,700,"right");t(q.toLocaleString(ja)+"個 × "+calYen(p),R,y+36,11,MU,400,"right")}else t("単価未入力",R,y+mH/2-3,12,"#e0b070",400,"right");y+=mH});
+y+=14;box(P,y,W-2*P,56,"#2a2320","#d9a35f");t("合計金額",P+14,y+20,14,TX,700);t("必要数 × 交易単価",P+14,y+39,11,MU);t(calYen(T.t),W-P-14,y+28,20,"#f0c27a",700,"right");y+=64;
+if(T.miss)t("交易単価が未入力の物が"+T.miss+"つあります（0として計算）。",P,y+8,11,"#e0b070");
+t("ライフアフター攻略ノート　survival-note.picoruno.com",W-P,H-20,11,MU,400,"right");
+calShow(c,"お買い物メモ")})}
+document.addEventListener("click",function(e){if(sec!="calc"||CAL.tab!="memo")return;var b=e.target.closest&&e.target.closest("button");if(!b)return;var d=b.dataset;
+if(d.mclr===undefined&&CAL.mclr){CAL.mclr=0;mmUpd()}
+if(d.mk){CAL.mk=CALS.mk=d.mk;calSave();mmRe();return}
+if(d.mg!==undefined){var G=EQG.filter(function(x){return x[0]==d.mg})[0];if(G[1].indexOf(mmSub("eq"))<0)CAL.mc.eq=(G[0]=="武器"&&CAL.mw)?CAL.mw:G[1][0];mmRe();return}
+if(d.mc!==undefined){CAL.mc[CAL.mk]=d.mc;if(CAL.mk=="eq"&&eqGr(d.mc)[0]=="武器")CAL.mw=d.mc;mmRe();return}
+if(d.ma){mmTog(d.ma);return}
+if(d.mx!==undefined){CALS.m.push({id:"x"+Date.now(),k:"x",n:d.mx,q:"1",p:""});calSave();if(CAL.mq){CAL.mq="";var s=$("#mmq");if(s)s.value="";mmRe()}mmLs();var ins=document.querySelectorAll(".mmnm"),z=ins[ins.length-1];if(z){z.scrollIntoView({block:"center",behavior:"smooth"});if(!d.mx)z.focus({preventScroll:true})}return}
+if(d.md!==undefined){CALS.m.splice(+d.md,1);calSave();mmRe();mmLs();return}
+if(d.mclr!==undefined){if(CAL.mclr){CALS.m=[];calSave();mmRe();mmLs();var t=$("#mml");if(t)scrollTo({top:t.getBoundingClientRect().top+scrollY-80,behavior:"smooth"})}else{CAL.mclr=1;mmUpd()}return}},true);
+document.addEventListener("input",function(e){if(sec!="calc"||CAL.tab!="memo")return;var t=e.target,d=t.dataset,r;
+if(t.id=="mmq"){if(e.isComposing)return;CAL.mq=t.value.trim();mmRe();return}
+if(d.mn!==undefined){r=CALS.m[+d.mn];if(r){r.n=t.value;calSave()}return}
+if(d.mq!==undefined){r=CALS.m[+d.mq];if(r){r.q=t.value;calSave();mmUpd()}return}
+if(d.mp!==undefined){r=CALS.m[+d.mp];if(r){r.p=t.value;if(r.k=="mat"||r.k=="semi")CALS.p[r.n]=t.value;calSave();mmUpd()}return}});
+document.addEventListener("compositionend",function(e){if(sec=="calc"&&e.target&&e.target.id=="mmq"){CAL.mq=e.target.value.trim();mmRe()}});
+document.addEventListener("change",function(e){var t=e.target;if(sec!="calc"||CAL.tab!="memo"||!t.value||t.dataset.mqs===undefined)return;var r=CALS.m[+t.dataset.mqs];if(!r)return;r.q=t.value;t.value="";var i=document.querySelector('[data-mq="'+t.dataset.mqs+'"]');if(i)i.value=r.q;calSave();mmUpd()});
 function own0(x,n){return x.mt.every(function(m){return !CALS.a[m[0]]&&!calNum(CALS.o[m[0]])})}
 document.addEventListener("click",function(e){if(sec!="calc")return;var b=e.target.closest&&e.target.closest("button");if(!b)return;
 if(b.dataset.ct){CAL.tab=CALS.t=b.dataset.ct;calSave();[].slice.call(document.querySelectorAll(".caltab .calk")).forEach(function(z){var on=z==b;z.classList.toggle("on",on);z.setAttribute("aria-selected",on)});$("#calb").innerHTML=calTabView();calUpd();return}

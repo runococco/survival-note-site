@@ -177,6 +177,7 @@ body[data-sec="core"]{--bga:#809fc6}
 body[data-sec="chip"]{--bga:#a58fc6}
 body[data-sec="item"]{--bga:#c4916c}
 body[data-sec="semi"]{--bga:#a8b0bd}
+body[data-sec="semi"] #main h2.tt{position:relative}.sjob{position:absolute;right:0;top:0;width:60px;height:60px;padding:0;border:1px solid var(--ln);background:none;cursor:pointer}.sjob img{display:block;width:100%;height:100%;object-fit:contain}.sjob:active{opacity:.75}
 body[data-sec="rec"]{--bga:#c97c70}
 body[data-sec="drone"]{--bga:#6db7b9}
 body[data-sec="bio"]{--bga:#8bb27a}
@@ -1249,6 +1250,7 @@ return h}
 cat="すべて";
 h='<button class="back" id="back"><span class="bka">‹</span>戻る</button><h2 class="tt">職業</h2><div class="ul">JOB</div>';
 return h+ssb("職業")+'<div id="sres">'+jobBody()+'</div>'}
+function semiJob(){if(sec!="semi")return "";var J=DATA.job.items,i=-1;J.some(function(x,k){if(x.n==cat){i=k;return true}});if(i<0)return "";return '<button type="button" class="sjob" data-s="job" data-i="'+i+'" aria-label="'+esc(cat)+'の職業ページへ"><img src="'+IMJ["e_"+J[i].k]+'" alt=""></button>'}
 function ssb(t){return '<div class="sw ssw"><input class="search" id="sq" type="search" placeholder="'+esc(t)+'の中から検索" autocomplete="off" value="'+esc(sq)+'"><button class="sx" id="sqx" type="button" aria-label="入力を消す"'+(sq?'':' hidden')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>'}
 function itx(x){return nz(JSON.stringify(x,function(k,v){return (typeof v=="string"&&(v.indexOf("data:")==0||v.indexOf("img/")==0))?"":v}).replace(/"[a-z]+":/g," "))}
 function secBody(){
@@ -1597,7 +1599,7 @@ if(it.secs)it.secs.forEach(function(S){h+=(it.deco&&S.mk?'<div class="tlbox">':'
 if(it.notes)h+='<h2>メモ</h2><ul class="fnt">'+it.notes.map(function(n){return '<li>'+esc(n)+'</li>'}).join("")+'</ul>';}
 }else if(sec&&sec!="rec"){
 var D=DATA[sec];
-h='<button class="back" id="back"><span class="bka">‹</span>戻る</button>'+(sec=="tip"?'':'<h2 class="tt">'+D.t+'</h2>')+'<div class="ul">'+D.en+'</div>'+ssb(D.t)+'<div id="sres">'+secBody()+'</div>';
+h='<button class="back" id="back"><span class="bka">‹</span>戻る</button>'+(sec=="tip"?'':'<h2 class="tt">'+D.t+semiJob()+'</h2>')+'<div class="ul">'+D.en+'</div>'+ssb(D.t)+'<div id="sres">'+secBody()+'</div>';
 }else if(sec=="bio"){
 var D=DATA.bio,cs=D.cats;if(cs.indexOf(cat)<0)cat=cs[0];
 h='<button class="back" id="back"><span class="bka">‹</span>戻る</button><h2 class="tt">'+D.t+'</h2><div class="ul">'+D.en+'</div><div class="chips">'+cs.map(function(c){return '<button class="chip" data-c="'+c+'"'+chs(c)+' aria-pressed="'+(c==cat)+'">'+cic(c)+c+'</button>'}).join("")+'</div>';

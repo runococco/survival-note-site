@@ -1008,10 +1008,10 @@ var W=ln.offsetWidth,x=-19,st="w",tt=0,last=0;
 function setF(k){s.style.backgroundPosition=(-38*k)+"px 0"}
 function fr(t){if(!h.isConnected)return;if(!last)last=t;var dt=Math.min(.05,(t-last)/1000);last=t;tt+=dt;var rl=ln.getBoundingClientRect().left;
 if(st=="w"){x+=10*dt;setF(Math.floor(tt*8)%7);if(x>W*.3||tt>5&&zLive(ln).some(function(z){var c=zCx(z,rl)-(x+19);return c>0&&c<170})){st="s";tt=0}}
-else if(st=="s"){setF(tt<.25?7:tt<1.25?8:9);if(tt>=2.75){st="r";tt=0}}
+else if(st=="s"){setF(tt<.25?7:tt<1.25?8:9);if(tt>=2.75){st="r";tt=0;if(ZBZ.ok&&!ZBZ.busy&&zLive(ln).length)zbzRun(ln)}}
 else{x-=65*dt;setF(10+Math.floor(tt*16)%6)}
 h.style.transform="translateX("+x.toFixed(1)+"px)";h.style.opacity=Math.max(0,Math.min(1,(x+38)/14,(W-x)/14)).toFixed(2);
-if(st=="r"&&x<-10){h.remove();setTimeout(function(){if(ln.isConnected&&ZBZ.ok&&!ZBZ.busy&&zLive(ln).length)zbzRun(ln)},100);ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}requestAnimationFrame(fr)}
+if(st=="r"&&x<-10){h.remove();ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}requestAnimationFrame(fr)}
 requestAnimationFrame(fr)}catch(e){}}
 /* 炎の剣の子: 開いて約1秒後に1回、その後は20秒ごとに25%の確率で、トップのゾンビの線を左から右へ走り抜け、触れたゾンビを蹴散らす */
 var ZHR={ln:null,t:0};

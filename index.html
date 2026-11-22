@@ -694,7 +694,7 @@ body[data-sec="chip"] #main .mt.mchip.open>img,body #main .dcpanel img,body #mai
 .zbn .zns{position:absolute;inset:0;background:url(img/4d8e2b61c7a9.webp) 0 0/608px 45px no-repeat}
 .zgr .zgs{transform-origin:50% 50%}
 .zbz{position:absolute;width:41px;height:36px;pointer-events:none;z-index:4;opacity:0}
-.zbz .zzs{position:absolute;inset:0;background:url(img/9a3f6c2e81d4.webp) 0 0/328px 36px no-repeat}
+.zbz .zzs{position:absolute;inset:0;background:url(img/6cb86fb911e4.webp) 0 0/328px 36px no-repeat}
 .zrk{position:absolute;left:0;top:0;width:9px;height:3px;margin:-1.5px 0 0 -9px;border-radius:1px 3px 3px 1px;background:linear-gradient(90deg,#ffb347,#6b5236 35%,#3b2c22);box-shadow:-3px 0 5px rgba(255,170,60,.9);pointer-events:none;z-index:5;transform-origin:100% 50%}
 .zrs{position:absolute;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:rgba(215,200,180,.7);pointer-events:none;z-index:4;animation:zrs .6s ease-out forwards}
 @keyframes zrs{0%{transform:scale(.6);opacity:.8}100%{transform:scale(2) translateY(-4px);opacity:0}}
@@ -955,7 +955,7 @@ function zLive(ln){return [].filter.call(ln.querySelectorAll(".zb:not(.zd):not(.
 function zCx(z,rl){var r=z.getBoundingClientRect();return r.left+r.width/2-rl}
 /* 左端近くまでゾンビが来たら、CONTENTS の文字の上にバズーカの子が現れ、ロケットで線の上のゾンビを一掃する */
 var ZBZ={};
-function zbGun(ln){clearInterval(ZBS.g);if(!ZBZ.im){ZBZ.im=new Image();ZBZ.im.onload=function(){ZBZ.ok=1};ZBZ.im.src="img/9a3f6c2e81d4.webp"}
+function zbGun(ln){clearInterval(ZBS.g);if(!ZBZ.im){ZBZ.im=new Image();ZBZ.im.onload=function(){ZBZ.ok=1};ZBZ.im.src="img/6cb86fb911e4.webp"}
 ZBS.g=setInterval(function(){try{if(!ln.isConnected){clearInterval(ZBS.g);return}if(document.hidden||ZBZ.busy||!ZBZ.ok)return;var lr=ln.getBoundingClientRect();
 if(zLive(ln).some(function(z){var x=zCx(z,lr.left);return x<40&&x>-6}))zbzRun(ln)}catch(e){}},150)}
 function zbzRun(ln){try{var en=ln.parentNode.querySelector(".en");if(!en)return;ZBZ.busy=1;var lr=ln.getBoundingClientRect(),er=en.getBoundingClientRect();

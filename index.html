@@ -957,7 +957,8 @@ function zCx(z,rl){var r=z.getBoundingClientRect();return r.left+r.width/2-rl}
 var ZBZ={};
 function zbGun(ln){clearInterval(ZBS.g);if(!ZBZ.im){ZBZ.im=new Image();ZBZ.im.onload=function(){ZBZ.ok=1};ZBZ.im.src="img/6cb86fb911e4.webp"}
 ZBS.g=setInterval(function(){try{if(!ln.isConnected){clearInterval(ZBS.g);return}if(document.hidden||ZBZ.busy||!ZBZ.ok)return;var lr=ln.getBoundingClientRect();
-if(zLive(ln).some(function(z){var x=zCx(z,lr.left);return x<40&&x>-6}))zbzRun(ln)}catch(e){}},150)}
+if(zLive(ln).some(function(z){var x=zCx(z,lr.left);return x<40&&x>-6})){zbzRun(ln);return}
+ZBS.rt=(ZBS.rt||0)+.15;if(ZBS.rt>=12){ZBS.rt=0;if(lr.bottom>0&&lr.top<innerHeight&&zLive(ln).length>=2&&Math.random()<.3)zbzRun(ln)}}catch(e){}},150)}
 function zbzRun(ln){try{var en=ln.parentNode.querySelector(".en");if(!en)return;ZBZ.busy=1;var lr=ln.getBoundingClientRect(),er=en.getBoundingClientRect();
 var gx=er.left-lr.left+(er.width-41)/2,gb=lr.bottom-er.top+1;
 var h=document.createElement("span");h.className="zbz";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zzs"></span>';h.style.left=gx.toFixed(1)+"px";h.style.bottom=gb.toFixed(1)+"px";ln.appendChild(h);var s=h.firstChild;
@@ -1010,7 +1011,7 @@ if(st=="w"){x+=10*dt;setF(Math.floor(tt*8)%7);if(x>W*.3||tt>5&&zLive(ln).some(fu
 else if(st=="s"){setF(tt<.25?7:tt<1.25?8:9);if(tt>=2.75){st="r";tt=0}}
 else{x-=40*dt;setF(10+Math.floor(tt*12)%6)}
 h.style.transform="translateX("+x.toFixed(1)+"px)";h.style.opacity=Math.max(0,Math.min(1,(x+38)/14,(W-x)/14)).toFixed(2);
-if(st=="r"&&x<-40){h.remove();ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}requestAnimationFrame(fr)}
+if(st=="r"&&x<-40){h.remove();ZHR.t=setTimeout(function(){if(ln.isConnected)zhrHero(ln)},600);return}requestAnimationFrame(fr)}
 requestAnimationFrame(fr)}catch(e){}}
 /* 炎の剣の子: 開いて約1秒後に1回、その後は20秒ごとに25%の確率で、トップのゾンビの線を左から右へ走り抜け、触れたゾンビを蹴散らす */
 var ZHR={ln:null,t:0};

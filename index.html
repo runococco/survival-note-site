@@ -193,7 +193,7 @@ body:not(.nohd) header::before{left:-16px;right:-16px;background:linear-gradient
 body:not(.nohd) header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ac) 70%,transparent) 30%,color-mix(in srgb,var(--ac) 70%,transparent) 70%,transparent);opacity:.8}
 header h1{letter-spacing:.06em;font-weight:800;text-shadow:0 2px 14px rgba(0,0,0,.75),0 0 30px rgba(0,0,0,.5)}
 header h1 small{letter-spacing:.3em;font-size:.68rem;text-transform:uppercase;color:#d8dde8;opacity:.9}
-.hcap{display:flex;align-items:center;gap:10px;margin-top:36px;color:var(--mu)}
+.hcap{display:flex;align-items:center;gap:10px;margin-top:36px;color:var(--mu);overflow-x:clip}
 .hcap .en{font-size:.58rem;letter-spacing:.3em;font-weight:700;color:var(--mu)}
 .hcap i{flex:1;height:1px;background:var(--ln);position:relative;margin-top:8px}
 .zb{position:absolute;left:0;bottom:0;width:18px;height:22px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
@@ -1007,7 +1007,7 @@ function zbnRun(ln){try{var h=document.createElement("span");h.className="zbn";h
 var W=ln.offsetWidth,x=-19,st="w",tt=0,last=0;
 function setF(k){s.style.backgroundPosition=(-38*k)+"px 0"}
 function fr(t){if(!h.isConnected)return;if(!last)last=t;var dt=Math.min(.05,(t-last)/1000);last=t;tt+=dt;var rl=ln.getBoundingClientRect().left;
-if(st=="w"){x+=15*dt;setF(Math.floor(tt*11)%7);if(x>W*.3||tt>5&&zLive(ln).some(function(z){var c=zCx(z,rl)-(x+19);return c>0&&c<170})){st="s";tt=0}}
+if(st=="w"){x+=15*dt;setF(Math.floor(tt*11)%7);if(x>W*.18||tt>2&&zLive(ln).some(function(z){var c=zCx(z,rl)-(x+19);return c>0&&c<230})){st="s";tt=0}}
 else if(st=="s"){setF(tt<.25?7:tt<1.25?8:9);if(tt>=2.75){st="r";tt=0;if(ZBZ.ok&&!ZBZ.busy&&zLive(ln).length)zbzRun(ln)}}
 else{x-=65*dt;setF(10+Math.floor(tt*16)%6)}
 h.style.transform="translateX("+x.toFixed(1)+"px)";h.style.opacity=Math.max(0,Math.min(1,(x+38)/14,(W-x)/14)).toFixed(2);

@@ -693,8 +693,12 @@ body[data-sec="chip"] #main .mt.mchip.open>img,body #main .dcpanel img,body #mai
 .zbn{position:absolute;left:0;bottom:-1px;width:38px;height:45px;pointer-events:none;z-index:3;will-change:transform}
 .zbn .zns{position:absolute;inset:0;background:url(img/4d8e2b61c7a9.webp) 0 0/608px 45px no-repeat}
 .zgr .zgs{transform-origin:50% 50%}
-.zsh{position:absolute;width:12px;height:2px;margin:-1px 0 0 -10px;border-radius:2px;background:linear-gradient(90deg,rgba(255,220,120,0),#ffe9a8 60%,#fff);box-shadow:0 0 4px rgba(255,200,80,.9);pointer-events:none;z-index:4;transform-origin:10px 50%}
-.zmf{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:radial-gradient(#fff 0 20%,rgba(255,214,110,.85) 45%,rgba(255,150,0,0) 70%);pointer-events:none;z-index:4;animation:zhbu .28s ease-out forwards}
+.zbz{position:absolute;width:41px;height:36px;pointer-events:none;z-index:4;opacity:0}
+.zbz .zzs{position:absolute;inset:0;background:url(img/9a3f6c2e81d4.webp) 0 0/328px 36px no-repeat}
+.zrk{position:absolute;left:0;top:0;width:9px;height:3px;margin:-1.5px 0 0 -9px;border-radius:1px 3px 3px 1px;background:linear-gradient(90deg,#ffb347,#6b5236 35%,#3b2c22);box-shadow:-3px 0 5px rgba(255,170,60,.9);pointer-events:none;z-index:5;transform-origin:100% 50%}
+.zrs{position:absolute;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:rgba(215,200,180,.7);pointer-events:none;z-index:4;animation:zrs .6s ease-out forwards}
+@keyframes zrs{0%{transform:scale(.6);opacity:.8}100%{transform:scale(2) translateY(-4px);opacity:0}}
+.zbx{position:absolute;bottom:-4px;width:34px;height:34px;margin-left:-17px;border-radius:50%;background:radial-gradient(#fff6d0 0 14%,rgba(255,200,80,.9) 32%,rgba(255,110,30,.6) 52%,rgba(120,60,40,0) 72%);filter:blur(.5px);pointer-events:none;z-index:5;animation:zhbu .55s ease-out forwards}
 </style>
 <meta name="theme-color" content="#0a0e17">
 <meta name="mobile-web-app-capable" content="yes">
@@ -949,12 +953,27 @@ var ZIV=6;
 function zbWave(ln){for(var i=0;i<5;i++)setTimeout(function(){if(ln.isConnected)zbAdd(ln,1)},i*4000)}
 function zLive(ln){return [].filter.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){return z.zbHit})}
 function zCx(z,rl){var r=z.getBoundingClientRect();return r.left+r.width/2-rl}
-/* 左端近くまで来たゾンビは、CONTENTS の C の上あたりから飛んでくる弾に撃たれて倒れる */
-function zbGun(ln){clearInterval(ZBS.g);ZBS.g=setInterval(function(){try{if(!ln.isConnected){clearInterval(ZBS.g);return}if(document.hidden)return;var en=ln.parentNode.querySelector(".en");if(!en)return;var lr=ln.getBoundingClientRect(),er=en.getBoundingClientRect(),sx=er.left+3-lr.left,sy=er.top-7-lr.top;
-zLive(ln).forEach(function(z){if(z._sh)return;var zr=z.getBoundingClientRect(),zx=zr.left+zr.width/2-lr.left;if(zx>40||zx<-6)return;z._sh=1;var zy=zr.top+zr.height*.4-lr.top,dx=zx-sx,dy=zy-sy,d=Math.sqrt(dx*dx+dy*dy),ms=Math.max(120,d/0.45);
-var f=document.createElement("span");f.className="zmf";f.style.left=sx.toFixed(1)+"px";f.style.top=sy.toFixed(1)+"px";ln.appendChild(f);setTimeout(function(){f.remove()},300);
-var b=document.createElement("span");b.className="zsh";b.style.left=sx.toFixed(1)+"px";b.style.top=sy.toFixed(1)+"px";var a=Math.atan2(dy,dx)*180/Math.PI;b.style.transform="rotate("+a.toFixed(1)+"deg)";b.style.transition="transform "+ms.toFixed(0)+"ms linear";ln.appendChild(b);void b.offsetWidth;b.style.transform="translate("+dx.toFixed(1)+"px,"+dy.toFixed(1)+"px) rotate("+a.toFixed(1)+"deg)";
-setTimeout(function(){b.remove();if(!z.isConnected||!z.zbHit)return;var bu=document.createElement("span");bu.className="zbu";bu.style.left=zx.toFixed(1)+"px";ln.appendChild(bu);setTimeout(function(){bu.remove()},450);z.zbHit()},ms)})}catch(e){}},150)}
+/* 左端近くまでゾンビが来たら、CONTENTS の文字の上にバズーカの子が現れ、ロケットで線の上のゾンビを一掃する */
+var ZBZ={};
+function zbGun(ln){clearInterval(ZBS.g);if(!ZBZ.im){ZBZ.im=new Image();ZBZ.im.onload=function(){ZBZ.ok=1};ZBZ.im.src="img/9a3f6c2e81d4.webp"}
+ZBS.g=setInterval(function(){try{if(!ln.isConnected){clearInterval(ZBS.g);return}if(document.hidden||ZBZ.busy||!ZBZ.ok)return;var lr=ln.getBoundingClientRect();
+if(zLive(ln).some(function(z){var x=zCx(z,lr.left);return x<40&&x>-6}))zbzRun(ln)}catch(e){}},150)}
+function zbzRun(ln){try{var en=ln.parentNode.querySelector(".en");if(!en)return;ZBZ.busy=1;var lr=ln.getBoundingClientRect(),er=en.getBoundingClientRect();
+var gx=er.left-lr.left+(er.width-41)/2,gb=lr.bottom-er.top+1;
+var h=document.createElement("span");h.className="zbz";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zzs"></span>';h.style.left=gx.toFixed(1)+"px";h.style.bottom=gb.toFixed(1)+"px";ln.appendChild(h);var s=h.firstChild;
+var TL=[[0,.5],[1,.1],[2,.1],[3,.15],[4,.12],[5,.12],[6,.12],[7,.8]],t0=0,fired=0;
+function setF(k){s.style.backgroundPosition=(-41*k)+"px 0"}
+function fr(t){if(!h.isConnected){ZBZ.busy=0;return}if(!t0)t0=t;var e=(t-t0)/1000,acc=0,k=-1;for(var i=0;i<TL.length;i++){acc+=TL[i][1];if(e<acc){k=TL[i][0];break}}
+h.style.opacity=Math.max(0,Math.min(1,e/.3,k<0?1-(e-acc)/.3:1)).toFixed(2);
+if(k<0){if(e>acc+.3){h.remove();ZBZ.busy=0;return}setF(7)}else{setF(k);if(k==3&&!fired){fired=1;rocket()}}
+requestAnimationFrame(fr)}
+function rocket(){var W=ln.offsetWidth,x=gx+36,y=-(gb+22),ty=-9,v=320,last=0,sm=0,hit=[];var r=document.createElement("span");r.className="zrk";ln.appendChild(r);
+function rf(t){if(!last)last=t;var dt=Math.min(.05,(t-last)/1000);last=t;x+=v*dt;var p=Math.min(1,(x-(gx+36))/90);var yy=y+(ty-y)*(1-(1-p)*(1-p));
+r.style.transform="translate("+x.toFixed(1)+"px,"+yy.toFixed(1)+"px) rotate("+(p<1?(Math.atan2(2*(ty-y)*(1-p)/90,1)*180/Math.PI):0).toFixed(1)+"deg)";
+sm+=dt;if(sm>.035){sm=0;var q=document.createElement("span");q.className="zrs";q.style.left=(x-6).toFixed(1)+"px";q.style.top=yy.toFixed(1)+"px";ln.appendChild(q);setTimeout(function(q){return function(){q.remove()}}(q),600)}
+var rl=ln.getBoundingClientRect().left;zLive(ln).forEach(function(z){if(hit.indexOf(z)>=0)return;var c=zCx(z,rl);if(x>=c-3){hit.push(z);var bx=document.createElement("span");bx.className="zbx";bx.style.left=c.toFixed(1)+"px";ln.appendChild(bx);setTimeout(function(){bx.remove()},600);z.zbHit()}});
+if(x>W+20){r.remove();return}requestAnimationFrame(rf)}requestAnimationFrame(rf)}
+requestAnimationFrame(fr)}catch(e){ZBZ.busy=0}}
 /* ショットガンの子：2歩ずつ歩き、届く距離のゾンビを撃つ（1発で倒すのは近い順に3体まで）。ゾンビが全滅するまで右端で待ち、後ろにいれば振り返って撃つ */
 var ZGR={};
 function zgrRun(ln){try{var h=document.createElement("span");h.className="zgr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zgs"></span>';ln.appendChild(h);var s=h.firstChild;

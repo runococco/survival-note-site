@@ -692,6 +692,7 @@ body[data-sec="chip"] #main .mt.mchip.open>img,body #main .dcpanel img,body #mai
 @keyframes zbin{0%{transform:translateX(var(--zw,120px)) scaleX(-1)}100%{transform:translateX(-24px) scaleX(-1)}}
 .zbn{position:absolute;left:0;bottom:-1px;width:38px;height:52px;pointer-events:none;z-index:3;will-change:transform}
 .zbn .zns{position:absolute;inset:0;background:url(img/b5e1a7c93d20.webp) 0 0/608px 52px no-repeat}
+.zgr .zgs{transform-origin:50% 50%}
 </style>
 <meta name="theme-color" content="#0a0e17">
 <meta name="mobile-web-app-capable" content="yes">
@@ -947,17 +948,22 @@ var ZIV=8.5;
 function zbWave(ln){for(var i=0;i<5;i++)setTimeout(function(){if(ln.isConnected)zbAdd(ln,1)},i*2000)}
 function zLive(ln){return [].filter.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){return z.zbHit})}
 function zCx(z,rl){var r=z.getBoundingClientRect();return r.left+r.width/2-rl}
-/* ショットガンの子：2歩ずつ歩き、届く距離のゾンビを撃って吹き飛ばす（出番ごとに炎の剣の子と半々で選ぶ） */
+/* ショットガンの子：2歩ずつ歩き、届く距離のゾンビを撃つ（1発で倒すのは近い順に3体まで）。ゾンビが全滅するまで右端で待ち、後ろにいれば振り返って撃つ */
 var ZGR={};
 function zgrRun(ln){try{var h=document.createElement("span");h.className="zgr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zgs"></span>';ln.appendChild(h);var s=h.firstChild;
-var W=ln.offsetWidth,x=-10,v=Math.max(45,W/7),st="w",t0=0,last=0,wt=0,SEQ=[3,3,4,4,5,5,6,6,7,7,8,8,8,9,9,10,10],fired=0;
+var W=ln.offsetWidth,x=-10,v=Math.max(45,W/7),st="w",t0=0,last=0,wt=0,dir=1,SEQ=[3,3,4,4,5,5,6,6,7,7,8,8,8,9,9,10,10],fired=0;
 function setF(k){s.style.backgroundPosition=(-74*k)+"px 0"}
-function live(){return [].filter.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){return z.zbHit})}
-function zc(z,rl){var r=z.getBoundingClientRect();return r.left+r.width/2-rl}
-function fire(rl){var mx=x+32,my=22;for(var i=0;i<6;i++){var p=document.createElement("span");p.className="zpl";p.setAttribute("style","left:"+mx.toFixed(1)+"px;bottom:"+(my-1)+"px;--a:"+((Math.random()-.5)*10).toFixed(1)+"deg");ln.appendChild(p);setTimeout(function(p){return function(){p.remove()}}(p),400)}
-live().forEach(function(z){var c=zc(z,rl);if(c>x+20&&c<x+170){setTimeout(function(){if(!z.isConnected)return;var bu=document.createElement("span");bu.className="zpb";bu.style.left=c.toFixed(1)+"px";ln.appendChild(bu);setTimeout(function(){bu.remove()},450);z.zbHit()},Math.max(0,c-mx)*1.6)}})}
+function setD(d){dir=d;s.style.transform=d<0?"scaleX(-1)":""}
+function ahead(c){return dir>0?(c>x+20&&c<x+170):(c<x-1&&c>x-151)}
+function fire(rl){var mx=dir>0?x+32:x-13,my=22;for(var i=0;i<6;i++){var p=document.createElement("span");p.className="zpl";p.setAttribute("style","left:"+mx.toFixed(1)+"px;bottom:"+(my-1)+"px;--a:"+((dir>0?0:180)+(Math.random()-.5)*10).toFixed(1)+"deg");ln.appendChild(p);setTimeout(function(p){return function(){p.remove()}}(p),400)}
+zLive(ln).map(function(z){return [z,zCx(z,rl)]}).filter(function(e){return ahead(e[1])}).sort(function(a,b){return Math.abs(a[1]-mx)-Math.abs(b[1]-mx)}).slice(0,3).forEach(function(e){var z=e[0],c=e[1];setTimeout(function(){if(!z.isConnected)return;var bu=document.createElement("span");bu.className="zpb";bu.style.left=c.toFixed(1)+"px";ln.appendChild(bu);setTimeout(function(){bu.remove()},450);z.zbHit()},Math.abs(c-mx)*1.6)})}
 function fr(t){if(!h.isConnected)return;if(!last)last=t;var dt=Math.min(.05,(t-last)/1000);last=t;var rl=ln.getBoundingClientRect().left;
-if(st=="w"){x+=v*dt;wt+=dt;if(wt>=1){if(live().some(function(z){var c=zc(z,rl);return c>x+25&&c<x+170})){st="s";t0=t;fired=0;setF(3)}else{wt-=1;setF(0)}}else setF(Math.floor(wt*6)%3)}
+if(st=="w"||st=="x"){var stop=st=="w"&&(dir>0?x>=W-70:x<=12);if(!stop)x+=dir*v*dt;wt+=dt;
+if(wt>=1){wt-=1;if(st=="w"){var L=zLive(ln).map(function(z){return zCx(z,rl)});
+if(L.some(ahead)){st="s";t0=t;fired=0;setF(3)}
+else if(!L.length){st="x";setD(1)}
+else if(!L.some(function(c){return dir>0?c>x:c<x}))setD(-dir)}
+if(st!="s")setF(0)}else if(st!="s")setF(stop?0:Math.floor(wt*6)%3)}
 else{var k=Math.floor((t-t0)/1000*12);if(k>=SEQ.length){st="w";wt=0}else{setF(SEQ[k]);if(SEQ[k]==6&&!fired){fired=1;fire(rl)}}}
 h.style.transform="translateX("+x.toFixed(1)+"px)";h.style.opacity=Math.max(0,Math.min(1,(x+40)/14,(W-x)/14)).toFixed(2);
 if(x>W+10){h.remove();ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}requestAnimationFrame(fr)}

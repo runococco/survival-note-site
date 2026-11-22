@@ -690,8 +690,8 @@ body[data-sec="chip"] #main .mt.mchip.open>img,body #main .dcpanel img,body #mai
 .zpb{position:absolute;bottom:2px;width:24px;height:24px;margin-left:-12px;border-radius:50%;background:radial-gradient(rgba(255,240,255,.9) 0 15%,rgba(210,130,255,.75) 38%,rgba(150,60,230,.35) 58%,rgba(120,40,220,0) 72%);filter:blur(1px);pointer-events:none;z-index:4;animation:zhbu .4s ease-out forwards}
 .zb.zin{animation-name:zbin;animation-duration:var(--zi,40s);animation-timing-function:linear;animation-iteration-count:1;animation-fill-mode:forwards;animation-delay:0s}
 @keyframes zbin{0%{transform:translateX(var(--zw,120px)) scaleX(-1)}100%{transform:translateX(-24px) scaleX(-1)}}
-.zbn{position:absolute;left:0;bottom:-1px;width:38px;height:52px;pointer-events:none;z-index:3;will-change:transform}
-.zbn .zns{position:absolute;inset:0;background:url(img/b5e1a7c93d20.webp) 0 0/608px 52px no-repeat}
+.zbn{position:absolute;left:0;bottom:-1px;width:38px;height:45px;pointer-events:none;z-index:3;will-change:transform}
+.zbn .zns{position:absolute;inset:0;background:url(img/4d8e2b61c7a9.webp) 0 0/608px 45px no-repeat}
 .zgr .zgs{transform-origin:50% 50%}
 </style>
 <meta name="theme-color" content="#0a0e17">
@@ -981,7 +981,7 @@ if(st=="r"&&x<-40){h.remove();ZHR.t=setTimeout(function(){zhrRun(ln)},20000);ret
 requestAnimationFrame(fr)}catch(e){}}
 /* 炎の剣の子: 開いて約1秒後に1回、その後は20秒ごとに25%の確率で、トップのゾンビの線を左から右へ走り抜け、触れたゾンビを蹴散らす */
 var ZHR={ln:null,t:0};
-function zhrInit(ln){if(ZHR.ln===ln)return;ZHR.ln=ln;if(!ZHR.im){ZHR.im=new Image();ZHR.im.onload=function(){ZHR.ok=1;var l=ZHR.ln;if(l&&l.isConnected&&!ZHR.h){var h=ZHR.h=document.createElement("span");h.className="zhr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zhs"></span>';h.className="zhr zhid";h.style.opacity=0;h.style.transform="translateX(-10px)";l.appendChild(h)}};ZHR.im.src="img/7c21a90f3e5d.webp"}if(!ZGR.im){ZGR.im=new Image();ZGR.im.onload=function(){ZGR.ok=1};ZGR.im.src="img/3700c9a58c41.webp"}if(!ZBN.im){ZBN.im=new Image();ZBN.im.onload=function(){ZBN.ok=1};ZBN.im.src="img/b5e1a7c93d20.webp"}ZHR.first=1;ZHR.h=null;clearTimeout(ZHR.t);ZHR.t=setTimeout(function(){zhrRun(ln)},1200)}
+function zhrInit(ln){if(ZHR.ln===ln)return;ZHR.ln=ln;if(!ZHR.im){ZHR.im=new Image();ZHR.im.onload=function(){ZHR.ok=1;var l=ZHR.ln;if(l&&l.isConnected&&!ZHR.h){var h=ZHR.h=document.createElement("span");h.className="zhr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zhs"></span>';h.className="zhr zhid";h.style.opacity=0;h.style.transform="translateX(-10px)";l.appendChild(h)}};ZHR.im.src="img/7c21a90f3e5d.webp"}if(!ZGR.im){ZGR.im=new Image();ZGR.im.onload=function(){ZGR.ok=1};ZGR.im.src="img/3700c9a58c41.webp"}if(!ZBN.im){ZBN.im=new Image();ZBN.im.onload=function(){ZBN.ok=1};ZBN.im.src="img/4d8e2b61c7a9.webp"}ZHR.first=1;ZHR.h=null;clearTimeout(ZHR.t);ZHR.t=setTimeout(function(){zhrRun(ln)},1200)}
 function zhrRun(ln){try{if(!ln.isConnected){ZHR.ln=null;return}var r0=ln.getBoundingClientRect();if(!ZHR.ok||document.hidden||r0.bottom<0||r0.top>innerHeight){ZHR.t=setTimeout(function(){zhrRun(ln)},ZHR.ok?3000:400);return}if(!ZHR.first&&Math.random()>.25){ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}
 ZHR.first=0;zbWave(ln);var pk=["h"];if(ZGR.ok)pk.push("g");if(ZBN.ok)pk.push("b");pk=pk[Math.floor(Math.random()*pk.length)];if(pk=="g"){zgrRun(ln);return}if(pk=="b"){zbnRun(ln);return}var h=ZHR.h;if(!h||!h.isConnected){h=ZHR.h=document.createElement("span");h.className="zhr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zhs"></span>';h.style.opacity=0;ln.appendChild(h)}h.classList.remove("zhid");
 var W=ln.offsetWidth,x=-10,v=Math.max(90,W/3),last=0,em=0,du=0;

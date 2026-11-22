@@ -196,15 +196,15 @@ header h1 small{letter-spacing:.3em;font-size:.68rem;text-transform:uppercase;co
 .hcap{display:flex;align-items:center;gap:10px;margin-top:36px;color:var(--mu);overflow-x:clip}
 .hcap .en{font-size:.58rem;letter-spacing:.3em;font-weight:700;color:var(--mu)}
 .hcap i{flex:1;height:1px;background:var(--ln);position:relative;margin-top:8px}
-.zb{position:absolute;left:0;bottom:0;width:18px;height:22px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
+.zb{position:absolute;left:0;bottom:0;width:29px;height:30px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
 .zb::before{content:"";position:absolute;left:-11px;right:-11px;top:-12px;bottom:-3px}
 .zb.zp,.zb.zh,.zb.zd{animation-play-state:paused}
-.zb svg{display:block;width:18px;height:22px;overflow:visible;transform-origin:50% 100%;shape-rendering:crispEdges}
+.zb .zim{display:block;width:29px;height:30px;transform-origin:50% 100%;background:url(img/818452b212d8.webp) 0 0/174px 30px no-repeat;animation:zbwk 1.2s steps(6) infinite}@keyframes zbwk{to{background-position:-174px 0}}.zb.zp .zim{animation-play-state:paused}
 .zb .zl1{animation:zbl .42s steps(2) infinite}.zb .zl2{animation:zbl .42s steps(2) infinite reverse}
 .zb .za{animation:zba .84s ease-in-out infinite}
 .zb.zp .zl1,.zb.zp .zl2,.zb.zp .za,.zb.zh .zl1,.zb.zh .zl2,.zb.zd .zl1,.zb.zd .zl2,.zb.zd .za{animation-play-state:paused}
-.zb.zh svg{animation:zbhit .32s ease-out}
-.zb.zd svg{animation:zbdie .7s ease-in forwards}
+.zb.zh .zim{animation:zbhit .32s ease-out}
+.zb.zd .zim{animation:zbdie .7s ease-in forwards}
 .zb .zh2{position:absolute;left:1px;top:-6px;width:16px;height:3px;border-radius:2px;background:rgba(0,0,0,.45);opacity:0;transition:opacity .2s}
 .zb .zh2 b{display:block;height:100%;width:var(--zhp,100%);border-radius:2px;background:#8fbf7a;transition:width .2s,background-color .2s}.zb.zmid .zh2 b{background:#f5a524}.zb.zlo .zh2 b{background:#e5484d}
 .zb.zhit .zh2{opacity:1}.zb.zd .zh2{opacity:0}
@@ -937,8 +937,8 @@ var ZBS={ln:null,t:0},ZBMAX=6,ZBEV=40000;
 function zbInit(){try{var ln=$("#main .hcap i");if(!ln||ZBS.ln===ln||matchMedia("(prefers-reduced-motion: reduce)").matches)return;ZBS.ln=ln;clearInterval(ZBS.t);zbAdd(ln);setTimeout(function(){if(ln.isConnected)zbAdd(ln)},4000);setTimeout(function(){if(ln.isConnected)zbAdd(ln)},8000);zhrInit(ln);zbGun(ln);
 ZBS.t=setInterval(function(){if(!ln.isConnected){clearInterval(ZBS.t);ZBS.ln=null;return}if(!document.hidden&&ln.querySelectorAll(".zb").length<ZBMAX)zbAdd(ln)},ZBEV)}catch(e){}}
 function zbAdd(ln,inn){try{var b=document.createElement("button");b.type="button";b.className="zb zin";var bs=false;b.setAttribute("aria-label","ゾンビ（タップで撃つ）");
-var sv='<span class="zh2"><b></b></span><svg viewBox="0 0 18 22" aria-hidden="true"><g class="zl1"><rect x="5" y="16" width="3" height="5" fill="#3b4256"/><rect x="5" y="21" width="4" height="1" fill="#2a2a2a"/></g><g class="zl2"><rect x="10" y="16" width="3" height="5" fill="#2f3546"/><rect x="10" y="21" width="4" height="1" fill="#2a2a2a"/></g><rect x="4" y="9" width="10" height="8" fill="#5f7a6a"/><rect x="6" y="11" width="2" height="3" fill="#4a6052"/><rect x="11" y="14" width="2" height="2" fill="#8a2a2a"/><g class="za"><rect x="11" y="10" width="7" height="2" fill="#5f7a6a"/><rect x="16" y="10" width="2" height="2" fill="#8fbf7a"/></g><rect x="5" y="1" width="9" height="8" fill="#8fbf7a"/><rect x="5" y="1" width="9" height="2" fill="#4c5d3e"/><rect x="8" y="1" width="2" height="1" fill="#8fbf7a"/><rect x="10" y="4" width="2" height="2" fill="#e5484d"/><rect x="13" y="4" width="1" height="2" fill="#e5484d"/><rect x="10" y="7" width="4" height="1" fill="#3a2a2a"/><rect x="6" y="5" width="1" height="2" fill="#6f9a5c"/>';
-b.innerHTML=sv+'</svg>';ln.appendChild(b);var ZHP=bs?24:8,hp=ZHP,busy=0;
+var sv='<span class="zh2"><b></b></span><span class="zim"></span>';
+b.innerHTML=sv;ln.appendChild(b);var ZHP=bs?24:8,hp=ZHP,busy=0;
 function sz(){if(!b.isConnected){removeEventListener("resize",sz);return}var w=Math.max(40,ln.offsetWidth-18);b.style.setProperty("--zw",w+"px");b.style.setProperty("--zt",(w*2/(bs?9:20)).toFixed(1)+"s");b.style.setProperty("--zi",((w+24)/ZIV).toFixed(1)+"s")}
 sz();b.addEventListener("animationend",function(ev){if(ev.target===b&&hp>0){b.remove();if(io)io.disconnect();if(!inn)setTimeout(function(){if(ln.isConnected&&ln.querySelectorAll(".zb").length<ZBMAX)zbAdd(ln)},8000)}});addEventListener("resize",sz,{passive:true});
 var io=null;if(window.IntersectionObserver){io=new IntersectionObserver(function(es){es.forEach(function(e){b.classList.toggle("zp",!e.isIntersecting)})});io.observe(b)}

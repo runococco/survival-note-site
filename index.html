@@ -188,14 +188,14 @@ body[data-sec="tip"]{--bga:#c8b264}
 @media (prefers-reduced-motion:reduce){body::before{transition:none}}
 
 /* ===== トップページ刷新 ===== */
-body:not(.nohd) header{padding-top:26px;padding-bottom:28px;margin-bottom:4px}
+body:not(.nohd) header{padding-top:26px;padding-bottom:14px;margin-bottom:4px}
 body:not(.nohd) header::before{left:-16px;right:-16px;background:linear-gradient(180deg,rgba(6,9,16,.35) 0%,rgba(6,9,16,.05) 30%,rgba(6,9,16,.55) 72%,#090c14 100%),url("img/0d756009366e.webp") 62% 35%/cover no-repeat}
 body:not(.nohd) header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--ac) 70%,transparent) 30%,color-mix(in srgb,var(--ac) 70%,transparent) 70%,transparent);opacity:.8}
 header h1{letter-spacing:.06em;font-weight:800;text-shadow:0 2px 14px rgba(0,0,0,.75),0 0 30px rgba(0,0,0,.5)}
 header h1 small{letter-spacing:.3em;font-size:.68rem;text-transform:uppercase;color:#d8dde8;opacity:.9}
-.hcap{display:flex;align-items:center;gap:10px;margin-top:22px;color:var(--mu)}
+.hcap{display:flex;align-items:center;gap:10px;margin-top:36px;color:var(--mu)}
 .hcap .en{font-size:.58rem;letter-spacing:.3em;font-weight:700;color:var(--mu)}
-.hcap i{flex:1;height:1px;background:var(--ln);position:relative}
+.hcap i{flex:1;height:1px;background:var(--ln);position:relative;margin-top:8px}
 .zb{position:absolute;left:0;bottom:0;width:18px;height:22px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
 .zb::before{content:"";position:absolute;left:-11px;right:-11px;top:-12px;bottom:-3px}
 .zb.zp,.zb.zh,.zb.zd{animation-play-state:paused}
@@ -231,17 +231,23 @@ header h1 small{letter-spacing:.3em;font-size:.68rem;text-transform:uppercase;co
 @keyframes zbdr{0%{transform:translateY(0);opacity:1}70%{opacity:1}100%{transform:translateY(7px);opacity:0}}
 .zb .zcf{left:12px;top:8px;width:4px;height:4px;animation:zbbd .9s ease-out forwards}.hcap.zshk{animation:zbshk .4s}
 @keyframes zbshk{25%{transform:translate(-2px,1px)}50%{transform:translate(2px,-1px)}75%{transform:translate(-1px,0)}}
-.zhr{position:absolute;left:0;bottom:0;width:27px;height:38px;pointer-events:none;z-index:3;will-change:transform}
-.zhr .zhs{position:absolute;inset:0;transform:scaleX(-1);background:url(img/2f39ae2e3271.webp) 0 0/189px 38px no-repeat;animation:zhrr .64s steps(7) infinite}
-.zhr::before{content:"";position:absolute;right:-6px;bottom:-2px;width:14px;height:14px;border-radius:50%;background:radial-gradient(rgba(255,196,70,.35),rgba(255,110,20,.15) 45%,rgba(255,80,0,0) 70%);filter:blur(1.5px);animation:zhrg .18s steps(2) infinite alternate;pointer-events:none}
-.zem{position:absolute;width:2.5px;height:2.5px;border-radius:50%;filter:blur(.4px);box-shadow:0 0 3px rgba(255,130,30,.6);pointer-events:none;z-index:2;opacity:.85;animation:zhre .55s ease-out forwards}
+.zhr{position:absolute;left:0;bottom:0;width:33px;height:44px;pointer-events:none;z-index:3;will-change:transform}
+.zhr .zhs{position:absolute;inset:0;transform:scaleX(-1);background:url(img/0e0658b17ebc.webp) 0 0/231px 44px no-repeat;animation:zhrr .64s steps(7) infinite}
+.zhr::before{content:"";position:absolute;right:-12px;bottom:-7px;width:22px;height:18px;border-radius:50%;background:radial-gradient(rgba(255,210,90,.5),rgba(255,120,20,.25) 40%,rgba(255,60,0,0) 70%);filter:blur(2px);mix-blend-mode:screen;animation:zhrg .18s steps(2) infinite alternate;pointer-events:none}
+.zem{position:absolute;width:3px;height:3px;border-radius:50%;filter:blur(.3px);box-shadow:0 0 4px 1px rgba(255,130,30,.8);pointer-events:none;z-index:2;animation:zhre .7s ease-out forwards}
+.zfl{position:absolute;width:var(--s,7px);height:calc(var(--s,7px)*1.5);margin-left:calc(var(--s,7px)/-2);border-radius:50% 50% 45% 45%/60% 60% 40% 40%;background:radial-gradient(ellipse at 50% 70%,#fff6c8 0 18%,#ffc23d 38%,#ff6a1a 62%,rgba(255,40,0,0) 75%);filter:blur(.5px);mix-blend-mode:screen;pointer-events:none;z-index:2;animation:zhfl .45s ease-out forwards}
+.zdu{position:absolute;bottom:-2px;width:9px;height:6px;border-radius:50%;background:radial-gradient(rgba(235,232,225,.9),rgba(235,232,225,.35) 55%,rgba(235,232,225,0) 72%);pointer-events:none;z-index:2;animation:zhdu .5s ease-out forwards}
+.zbu{position:absolute;bottom:-3px;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:radial-gradient(rgba(255,243,192,.8) 0 15%,rgba(255,178,46,.7) 35%,rgba(255,80,0,.35) 55%,rgba(255,40,0,0) 72%);filter:blur(1px);mix-blend-mode:screen;pointer-events:none;z-index:4;animation:zhbu .4s ease-out forwards}
 .zsl{position:absolute;bottom:2px;width:24px;height:24px;margin-left:-12px;border-radius:50%;border-right:2.5px solid #ffd36b;box-shadow:4px 0 8px -2px rgba(255,120,20,.9);filter:blur(.4px);pointer-events:none;z-index:3;animation:zhrs .3s ease-out forwards}
 .zb.zko{animation-play-state:paused}
 .zb.zko .zl1,.zb.zko .zl2,.zb.zko .za{animation-play-state:paused}
 .zb.zko svg{animation:zbko .8s cubic-bezier(.2,.7,.4,1) forwards}
 .zb.zko .zh2{opacity:0}
 .zhr.zhid .zhs,.zhr.zhid::before{animation-play-state:paused}.zhr.zhid::before{opacity:0}
-@keyframes zhrr{to{background-position:-189px 0}}
+@keyframes zhfl{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(.25);opacity:0}}
+@keyframes zhbu{0%{transform:scale(.3);opacity:.9}100%{transform:scale(1.4);opacity:0}}
+@keyframes zhrr{to{background-position:-231px 0}}
+@keyframes zhdu{0%{transform:translate(0,0) scale(.4);opacity:.85}100%{transform:translate(var(--dx),-5px) scale(1.4);opacity:0}}
 @keyframes zhrg{from{opacity:.65;transform:scale(.9)}to{opacity:1;transform:scale(1.08)}}
 @keyframes zhre{0%{transform:translate(0,0);opacity:1}100%{transform:translate(var(--dx),var(--dy));opacity:0}}
 @keyframes zhrs{0%{transform:rotate(-70deg) scale(.5);opacity:1}100%{transform:rotate(40deg) scale(1.25);opacity:0}}
@@ -929,13 +935,13 @@ if(hp>0){busy=1;b.classList.remove("zh");void b.offsetWidth;b.classList.add("zh"
 else{if(ko){var mt=getComputedStyle(b).transform,fl=/^matrix\(-/.test(mt);b.style.setProperty("--kx",(fl?-30:30)+"px");b.style.setProperty("--kr",(fl?-260:260)+"deg");b.classList.add("zko")}else b.classList.add("zd");fx("zpf");if(bs){var hc=ln.parentNode;hc.classList.add("zshk");setTimeout(function(){hc.classList.remove("zshk")},450);for(k=0;k<14;k++)fx("zcf","--dx:"+(Math.random()*60-30).toFixed(1)+"px;--dy:"+(-10-Math.random()*26).toFixed(1)+"px;background:"+["#a3121b","#3a0a0e","#140709","#6b0d12"][k%4])}setTimeout(function(){b.remove();if(io)io.disconnect();setTimeout(function(){if(ln.isConnected&&ln.querySelectorAll(".zb").length<ZBMAX)zbAdd(ln)},9000)},1100)}}}catch(e){}}
 /* 炎の剣の子: 開いて約1秒後に1回、その後は20秒ごとに25%の確率で、トップのゾンビの線を左から右へ走り抜け、触れたゾンビを蹴散らす */
 var ZHR={ln:null,t:0};
-function zhrInit(ln){if(ZHR.ln===ln)return;ZHR.ln=ln;if(!ZHR.im){ZHR.im=new Image();ZHR.im.onload=function(){ZHR.ok=1;var l=ZHR.ln;if(l&&l.isConnected&&!ZHR.h){var h=ZHR.h=document.createElement("span");h.className="zhr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zhs"></span>';h.className="zhr zhid";h.style.opacity=0;h.style.transform="translateX(-10px)";l.appendChild(h)}};ZHR.im.src="img/2f39ae2e3271.webp"}ZHR.first=1;ZHR.h=null;clearTimeout(ZHR.t);ZHR.t=setTimeout(function(){zhrRun(ln)},1200)}
+function zhrInit(ln){if(ZHR.ln===ln)return;ZHR.ln=ln;if(!ZHR.im){ZHR.im=new Image();ZHR.im.onload=function(){ZHR.ok=1;var l=ZHR.ln;if(l&&l.isConnected&&!ZHR.h){var h=ZHR.h=document.createElement("span");h.className="zhr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zhs"></span>';h.className="zhr zhid";h.style.opacity=0;h.style.transform="translateX(-10px)";l.appendChild(h)}};ZHR.im.src="img/0e0658b17ebc.webp"}ZHR.first=1;ZHR.h=null;clearTimeout(ZHR.t);ZHR.t=setTimeout(function(){zhrRun(ln)},1200)}
 function zhrRun(ln){try{if(!ln.isConnected){ZHR.ln=null;return}var r0=ln.getBoundingClientRect();if(!ZHR.ok||document.hidden||r0.bottom<0||r0.top>innerHeight){ZHR.t=setTimeout(function(){zhrRun(ln)},ZHR.ok?3000:400);return}if(!ZHR.first&&Math.random()>.25){ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}
 ZHR.first=0;var h=ZHR.h;if(!h||!h.isConnected){h=ZHR.h=document.createElement("span");h.className="zhr";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zhs"></span>';h.style.opacity=0;ln.appendChild(h)}h.classList.remove("zhid");
-var W=ln.offsetWidth,x=-10,v=Math.max(90,W/3),last=0,em=0;
+var W=ln.offsetWidth,x=-10,v=Math.max(90,W/3),last=0,em=0,du=0;
 function fr(t){if(!h.isConnected)return;if(!last)last=t;var dt=Math.min(.05,(t-last)/1000);last=t;x+=v*dt;h.style.transform="translateX("+x.toFixed(1)+"px)";var op=Math.max(0,Math.min(1,(x+10)/10,(W-20-x)/14));h.style.opacity=op.toFixed(2);
-em+=dt;while(em>.12){em-=.12;var e=document.createElement("span");e.className="zem";e.setAttribute("style","left:"+(x+20+Math.random()*8).toFixed(1)+"px;bottom:"+(1+Math.random()*8).toFixed(1)+"px;background:"+["#ffd36b","#ff9a2e","#ff5a1f","#fff1b8"][Math.floor(Math.random()*4)]+";--dx:"+(-6-Math.random()*12).toFixed(1)+"px;--dy:"+(-4-Math.random()*14).toFixed(1)+"px");ln.appendChild(e);setTimeout(function(e){return function(){e.remove()}}(e),600);if(x<-17||x>W-45)e.style.opacity=0}
-var rl=ln.getBoundingClientRect().left;[].forEach.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){var zr=z.getBoundingClientRect(),zc=zr.left+zr.width/2-rl;if(op>=1&&zc>x+14&&zc<x+31&&z.zbHit){var sl=document.createElement("span");sl.className="zsl";sl.style.left=zc.toFixed(1)+"px";ln.appendChild(sl);setTimeout(function(){sl.remove()},350);z.zbHit()}});
+em+=dt;while(em>.08){em-=.08;var f=document.createElement("span");f.className="zfl";f.setAttribute("style","left:"+(x+24+Math.random()*12).toFixed(1)+"px;bottom:"+(2+Math.random()*8).toFixed(1)+"px;--s:"+(4+Math.random()*3).toFixed(1)+"px;--dx:"+(-6-Math.random()*8).toFixed(1)+"px;--dy:"+(-6-Math.random()*8).toFixed(1)+"px");ln.appendChild(f);setTimeout(function(f){return function(){f.remove()}}(f),500);if(op<1)f.style.opacity=0;if(Math.random()<.6)continue;var e=document.createElement("span");e.className="zem";e.setAttribute("style","left:"+(x+21+Math.random()*14).toFixed(1)+"px;bottom:"+(1+Math.random()*11).toFixed(1)+"px;background:"+["#ffd36b","#ff9a2e","#ff5a1f","#fff1b8"][Math.floor(Math.random()*4)]+";--dx:"+(-10-Math.random()*18).toFixed(1)+"px;--dy:"+(-8-Math.random()*22).toFixed(1)+"px");ln.appendChild(e);setTimeout(function(e){return function(){e.remove()}}(e),750);if(op<1)e.style.opacity=0}
+var rl=ln.getBoundingClientRect().left;[].forEach.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){var zr=z.getBoundingClientRect(),zc=zr.left+zr.width/2-rl;if(op>=1&&zc>x+16&&zc<x+36&&z.zbHit){var sl=document.createElement("span");sl.className="zsl";sl.style.left=zc.toFixed(1)+"px";ln.appendChild(sl);setTimeout(function(){sl.remove()},350);var bu=document.createElement("span");bu.className="zbu";bu.style.left=zc.toFixed(1)+"px";ln.appendChild(bu);setTimeout(function(){bu.remove()},450);z.zbHit()}});
 if(x>W-20){h.style.opacity=0;h.classList.add("zhid");ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}requestAnimationFrame(fr)}
 requestAnimationFrame(fr)}catch(e){}}
 function swPlace(){var sw=document.querySelector(".sw.sq"),hd=document.querySelector("header"),hc=$("#main .hcap");if(!sw||!hd)return;if(!sec&&!q&&hc&&hd.classList.contains("qo")){hc.insertAdjacentElement("afterend",sw)}else if(!hd.contains(sw)){hd.appendChild(sw)}}
@@ -1647,7 +1653,7 @@ var L=D.items.map(function(x,i){return[x,i]}).filter(function(p){return cat=="�
 h+=L.length?L.map(function(p){return row(sec,p[1],p[0])}).join(""):'<p class="mu">該当なし。\n分類を変えてください。</p>';
 h+='<div class="notice mu">「サンプル」は仮データです。\n実際の内容は DATA 部分に追加します。</div>';
 }else{
-h=evTop()+'<div class="hcap"><button type="button" class="hq" id="hq" aria-label="すべてのページから検索" aria-pressed="'+document.querySelector("header").classList.contains("qo")+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></button><span class="en">CONTENTS</span><i></i><span class="hcn">'+KEYS.length+' pages</span></div><div class="grid">'+KEYS.map(function(k){var d=DATA[k];return '<button class="sec" data-k="'+k+'" style="--icc:'+(ICC[k]||"var(--ac)")+'"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICO[k]+'</svg></span><div class="g"><span class="en">'+d.en+'</span><b>'+d.t+'</b></div><span class="chev">›</span></button>'}).join("")+'</div>'+PICO;
+h=evTop()+'<div class="hcap"><button type="button" class="hq" id="hq" aria-label="すべてのページから検索" aria-pressed="'+document.querySelector("header").classList.contains("qo")+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></button><span class="en">CONTENTS</span><i></i></div><div class="grid">'+KEYS.map(function(k){var d=DATA[k];return '<button class="sec" data-k="'+k+'" style="--icc:'+(ICC[k]||"var(--ac)")+'"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICO[k]+'</svg></span><div class="g"><span class="en">'+d.en+'</span><b>'+d.t+'</b></div><span class="chev">›</span></button>'}).join("")+'</div>'+PICO;
 }
 var qf=document.activeElement&&document.activeElement.id=="q"?[$("#q").selectionStart,$("#q").selectionEnd]:null;(function(){var sw=document.querySelector(".sw.sq"),hd=document.querySelector("header");if(sw&&hd&&!hd.contains(sw))hd.appendChild(sw)})();$("#main").innerHTML=h;fGate($("#main"));if(document.body.dataset.sec=="tip"&&!(open!==null&&DATA[sec].items[open]&&(DATA[sec].items[open].full||DATA[sec].items[open].dark)))noteSnap();(function(m){m.classList.remove("in");if(window.__typ){window.__typ=0;return}if(!window.__booted){window.__booted=1;return}void m.offsetWidth;m.classList.add("in")})($("#main"));tbar();bcPut();anJump();hlGo();swPlace();zbInit();if(qf){var qe=$("#q");if(document.activeElement!=qe){qe.focus({preventScroll:true});try{qe.setSelectionRange(qf[0],qf[1])}catch(e){}}}if(sec=="tip"&&tipAnim){tipAnim=false;nbOpen()}
 if(sec=="rec"&&!q)rqf();

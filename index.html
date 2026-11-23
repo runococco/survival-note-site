@@ -967,7 +967,7 @@ var TL=[[0,.5],[1,.1],[2,.1],[3,.15],[4,.12],[5,.12],[6,.12],[7,2.5]],t0=0,fired
 function setF(k){s.style.backgroundPosition=(-41*k)+"px 0"}
 function left(){var rl=ln.getBoundingClientRect().left;return zLive(ln).filter(function(z){var c=zCx(z,rl);return !pend.some(function(p){return Math.abs(c-p)<R})}).sort(function(a,b){return zCx(a,rl)-zCx(b,rl)})}
 function fr(t){if(!h.isConnected){ZBZ.busy=0;return}if(!t0)t0=t;var e=(t-t0)/1000,acc=0,k=-1,ix=-1;if(need&&e>.3&&e<.5&&zLive(ln).length<need){if(!hs)hs=t;if(t-hs<40000)t0=t-300}for(var i=0;i<TL.length;i++){acc+=TL[i][1];if(e<acc){k=TL[i][0];ix=i;break}}
-if(k==7&&TL[ix-1][0]==6&&!TL[ix-1].c){TL[ix-1].c=1;if(shots<2){shots++;TL.splice(ix,0,[3,.15],[4,.12],[5,.12],[6,.12]);requestAnimationFrame(fr);return}}
+if(k==7&&TL[ix-1][0]==6&&!TL[ix-1].c){TL[ix-1].c=1;if(shots<2){shots++;TL.splice(ix,0,[7,.8],[3,.15],[4,.12],[5,.12],[6,.12]);requestAnimationFrame(fr);return}}
 h.style.opacity=Math.max(0,Math.min(1,e/.3,k<0?1-(e-acc)/.3:1)).toFixed(2);
 if(k<0){if(e>acc+.3){h.remove();ZBZ.busy=0;return}setF(7)}else{setF(k);if(k==3&&fired!==ix){fired=ix;rocket()}}
 requestAnimationFrame(fr)}

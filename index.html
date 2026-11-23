@@ -960,6 +960,8 @@ function zbGun(ln){clearInterval(ZBS.g);if(!ZBZ.im){ZBZ.im=new Image();ZBZ.im.on
 ZBS.g=setInterval(function(){try{if(!ln.isConnected){clearInterval(ZBS.g);return}if(document.hidden||ZBZ.busy||!ZBZ.ok)return;var lr=ln.getBoundingClientRect();
 if(zLive(ln).some(function(z){var x=zCx(z,lr.left);return x<40&&x>-6})){zbzRun(ln);return}
 ZBS.rt=(ZBS.rt||0)+.15;if(ZBS.rt>=20){ZBS.rt=0;if(lr.bottom>0&&lr.top<innerHeight&&zLive(ln).length>=2&&Math.random()<.15)zbzRun(ln)}}catch(e){}},150)}
+/* うさぎの子が引き返すとき、助けに来るフレンドをランダムに選ぶ（バズーカの子・炎の剣の子・ショットガンの子） */
+function zbnHelp(ln){try{var c=[];if(ZBZ.ok&&!ZBZ.busy)c.push(function(){zbzRun(ln)});if(ZHR.ok&&!(ZHR.h&&ZHR.h.isConnected&&!ZHR.h.classList.contains("zhid")&&ZHR.h.style.opacity>0))c.push(function(){zhrHero(ln)});if(ZGR.ok&&!ln.querySelector(".zgr"))c.push(function(){zgrRun(ln)});if(c.length)c[Math.floor(Math.random()*c.length)]()}catch(e){}}
 function zbzRun(ln,need){try{var hs=0;var en=ln.parentNode.querySelector(".en");if(!en)return;ZBZ.busy=1;var lr=ln.getBoundingClientRect(),er=en.getBoundingClientRect();
 var gx=er.left-lr.left+(er.width-41)/2,gb=lr.bottom-er.top+1;
 var h=document.createElement("span");h.className="zbz";h.setAttribute("aria-hidden","true");h.innerHTML='<span class="zzs"></span>';h.style.left=gx.toFixed(1)+"px";h.style.bottom=gb.toFixed(1)+"px";ln.appendChild(h);var s=h.firstChild;
@@ -1009,7 +1011,7 @@ var W=ln.offsetWidth,x=-19,st="w",tt=0,last=0;
 function setF(k){s.style.backgroundPosition=(-38*k)+"px 0"}
 function fr(t){if(!h.isConnected)return;if(!last)last=t;var dt=Math.min(.05,(t-last)/1000);last=t;tt+=dt;var rl=ln.getBoundingClientRect().left;
 if(st=="w"){x+=15*dt;setF(Math.floor(tt*11)%7);if(x>W*.18||tt>2&&zLive(ln).some(function(z){var c=zCx(z,rl)-(x+19);return c>0&&c<230})){st="s";tt=0}}
-else if(st=="s"){setF(tt<.25?7:tt<1.25?8:9);if(tt>=2.75){st="r";tt=0;if(ZBZ.ok&&!ZBZ.busy&&zLive(ln).length)zbzRun(ln)}}
+else if(st=="s"){setF(tt<.25?7:tt<1.25?8:9);if(tt>=2.75){st="r";tt=0;if(zLive(ln).length)zbnHelp(ln)}}
 else{x-=65*dt;setF(10+Math.floor(tt*16)%6)}
 h.style.transform="translateX("+x.toFixed(1)+"px)";h.style.opacity=Math.max(0,Math.min(1,(x+38)/14,(W-x)/14)).toFixed(2);
 if(st=="r"&&x<-10){h.remove();ZHR.t=setTimeout(function(){zhrRun(ln)},20000);return}requestAnimationFrame(fr)}

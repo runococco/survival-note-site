@@ -196,10 +196,10 @@ header h1 small{letter-spacing:.3em;font-size:.68rem;text-transform:uppercase;co
 .hcap{display:flex;align-items:center;gap:10px;margin-top:36px;color:var(--mu);overflow-x:clip}
 .hcap .en{font-size:.58rem;letter-spacing:.3em;font-weight:700;color:var(--mu)}
 .hcap i{flex:1;height:1px;background:var(--ln);position:relative;margin-top:8px}
-.zb{position:absolute;left:0;bottom:0;width:46px;height:41px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
+.zb{position:absolute;left:0;bottom:0;width:42px;height:37px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
 .zb::before{content:"";position:absolute;left:-11px;right:-11px;top:-12px;bottom:-3px}
 .zb.zp,.zb.zh,.zb.zd{animation-play-state:paused}
-.zb .zim{position:relative;display:block;width:46px;height:41px;transform-origin:50% 100%;background:url(img/e5660a178814.webp) 0 0/368px 41px no-repeat;filter:drop-shadow(0 0 6px rgba(110,190,255,.3));animation:zbwk 3.5s steps(8) infinite}@keyframes zbwk{to{background-position:-368px 0}}.zb .zim::after{content:"";position:absolute;left:6px;top:11px;width:34px;height:30px;border-radius:50%;background:radial-gradient(rgba(120,205,255,.4),rgba(60,160,255,.17) 45%,rgba(40,140,255,0) 70%);pointer-events:none;animation:zbau2 1.8s ease-in-out infinite alternate}@keyframes zbau2{from{opacity:.65}to{opacity:1}}.zb.zp .zim{animation-play-state:paused}
+.zb .zim{position:relative;display:block;width:42px;height:37px;transform-origin:50% 100%;background:url(img/97722b58ee65.webp) 0 0/336px 37px no-repeat;filter:drop-shadow(0 0 6px rgba(110,190,255,.3));animation:zbwk 3.5s steps(8) infinite}@keyframes zbwk{to{background-position:-336px 0}}.zb .zim::after{content:"";position:absolute;left:5px;top:10px;width:31px;height:27px;border-radius:50%;background:radial-gradient(rgba(120,205,255,.4),rgba(60,160,255,.17) 45%,rgba(40,140,255,0) 70%);pointer-events:none;animation:zbau2 1.8s ease-in-out infinite alternate}@keyframes zbau2{from{opacity:.65}to{opacity:1}}.zb.zp .zim{animation-play-state:paused}
 .zb .zl1{animation:zbl .42s steps(2) infinite}.zb .zl2{animation:zbl .42s steps(2) infinite reverse}
 .zb .za{animation:zba .84s ease-in-out infinite}
 .zb.zp .zl1,.zb.zp .zl2,.zb.zp .za,.zb.zh .zl1,.zb.zh .zl2,.zb.zd .zl1,.zb.zd .zl2,.zb.zd .za{animation-play-state:paused}
@@ -950,7 +950,7 @@ function hit(n,ko){hp=Math.max(0,hp-n);if(!ko)b.classList.add("zhit");b.style.se
 if(hp>0){busy=1;b.classList.remove("zh");void b.offsetWidth;b.classList.add("zh");setTimeout(function(){b.classList.remove("zh");busy=0},260)}
 else{if(ko){var mt=getComputedStyle(b).transform,fl=/^matrix\(-/.test(mt);b.style.setProperty("--kx",(fl?-30:30)+"px");b.style.setProperty("--kr",(fl?-260:260)+"deg");b.classList.add("zko")}else b.classList.add("zd");fx("zpf");if(bs){var hc=ln.parentNode;hc.classList.add("zshk");setTimeout(function(){hc.classList.remove("zshk")},450);for(k=0;k<14;k++)fx("zcf","--dx:"+(Math.random()*60-30).toFixed(1)+"px;--dy:"+(-10-Math.random()*26).toFixed(1)+"px;background:"+["#a3121b","#3a0a0e","#140709","#6b0d12"][k%4])}setTimeout(function(){b.remove();if(io)io.disconnect();if(!inn)setTimeout(function(){if(ln.isConnected&&ln.querySelectorAll(".zb").length<ZBMAX)zbAdd(ln)},15000)},1100)}}}catch(e){}}
 /* ゾンビはすべて右端から出て、ゆっくり左へ歩き、左端で消える（速さはうさぎの子の動画と同じ比率）。キャラが出るたびに5体（4秒おき）追加する。ボスゾンビは出さない */
-var ZIV=10;
+var ZIV=9;
 function zbWave(ln){for(var i=0;i<5;i++)setTimeout(function(){if(ln.isConnected)zbAdd(ln,1)},i*4000)}
 function zLive(ln){return [].filter.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){return z.zbHit})}
 function zCx(z,rl){var r=z.getBoundingClientRect();return r.left+r.width/2-rl}

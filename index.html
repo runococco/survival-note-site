@@ -196,29 +196,29 @@ header h1 small{letter-spacing:.3em;font-size:.68rem;text-transform:uppercase;co
 .hcap{display:flex;align-items:center;gap:10px;margin-top:36px;color:var(--mu);overflow-x:clip}
 .hcap .en{font-size:.58rem;letter-spacing:.3em;font-weight:700;color:var(--mu)}
 .hcap i{flex:1;height:1px;background:var(--ln);position:relative;margin-top:8px}
-.zb{position:absolute;left:0;bottom:0;width:29px;height:30px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
+.zb{position:absolute;left:0;bottom:0;width:41px;height:45px;padding:0;margin:0;border:0;background:none;cursor:crosshair;-webkit-tap-highlight-color:transparent;animation:zbrun var(--zt,14s) linear infinite;will-change:transform;touch-action:manipulation}
 .zb::before{content:"";position:absolute;left:-11px;right:-11px;top:-12px;bottom:-3px}
 .zb.zp,.zb.zh,.zb.zd{animation-play-state:paused}
-.zb .zim{display:block;width:29px;height:30px;transform-origin:50% 100%;background:url(img/818452b212d8.webp) 0 0/174px 30px no-repeat;animation:zbwk 1.2s steps(6) infinite}@keyframes zbwk{to{background-position:-174px 0}}.zb.zp .zim{animation-play-state:paused}
+.zb .zim{position:relative;display:block;width:41px;height:45px;transform-origin:50% 100%;background:url(img/e4f0713467e0.webp) 0 0/246px 45px no-repeat;filter:drop-shadow(0 0 4px rgba(110,190,255,.25));animation:zbwk 1.2s steps(6) infinite}@keyframes zbwk{to{background-position:-246px 0}}.zb .zim::after{content:"";position:absolute;left:4px;top:13px;width:27px;height:25px;border-radius:50%;background:radial-gradient(rgba(120,205,255,.4),rgba(60,160,255,.17) 45%,rgba(40,140,255,0) 70%);pointer-events:none;animation:zbau2 1.8s ease-in-out infinite alternate}@keyframes zbau2{from{opacity:.65}to{opacity:1}}.zb.zp .zim{animation-play-state:paused}
 .zb .zl1{animation:zbl .42s steps(2) infinite}.zb .zl2{animation:zbl .42s steps(2) infinite reverse}
 .zb .za{animation:zba .84s ease-in-out infinite}
 .zb.zp .zl1,.zb.zp .zl2,.zb.zp .za,.zb.zh .zl1,.zb.zh .zl2,.zb.zd .zl1,.zb.zd .zl2,.zb.zd .za{animation-play-state:paused}
 .zb.zh .zim{animation:zbhit .32s ease-out}
-.zb.zd .zim{animation:zbdie .7s ease-in forwards}
-.zb .zh2{position:absolute;left:1px;top:-6px;width:16px;height:3px;border-radius:2px;background:rgba(0,0,0,.45);opacity:0;transition:opacity .2s}
+.zb.zd .zim{animation:zbdie2 .7s ease-in forwards}@keyframes zbdie2{0%{transform:none}35%{transform:translate(-3px,-4px) rotate(-30deg)}75%{transform:translate(-6px,-18px) rotate(-90deg);opacity:1}100%{transform:translate(-6px,-18px) rotate(-90deg);opacity:0}}
+.zb .zh2{position:absolute;left:12px;top:-5px;width:18px;height:3px;border-radius:2px;background:rgba(0,0,0,.45);opacity:0;transition:opacity .2s}
 .zb .zh2 b{display:block;height:100%;width:var(--zhp,100%);border-radius:2px;background:#8fbf7a;transition:width .2s,background-color .2s}.zb.zmid .zh2 b{background:#f5a524}.zb.zlo .zh2 b{background:#e5484d}
 .zb.zhit .zh2{opacity:1}.zb.zd .zh2{opacity:0}
 .zb .zs{position:absolute;pointer-events:none}
-.zb .zf{left:2px;top:-4px;width:20px;height:20px;background:radial-gradient(circle,#fff6c2 0 25%,#ffc83d 40%,rgba(255,140,0,0) 70%);border-radius:50%;animation:zbf .22s ease-out forwards}
-.zb .zbd{left:9px;top:6px;width:4px;height:4px;border-radius:50%;background:#b3191f;animation:zbbd .5s ease-out forwards}
-.zb .zpf{left:-3px;bottom:0;width:24px;height:12px;border-radius:50%;background:radial-gradient(rgba(190,200,190,.75),rgba(190,200,190,0) 70%);animation:zbpf .7s ease-out .35s both}
+.zb .zf{left:8px;top:12px;width:20px;height:20px;background:radial-gradient(circle,#fff6c2 0 25%,#ffc83d 40%,rgba(255,140,0,0) 70%);border-radius:50%;animation:zbf .22s ease-out forwards}
+.zb .zbd{left:15px;top:18px;width:3px;height:3px;border-radius:50% 50% 45% 55%;background:radial-gradient(circle at 35% 35%,#8e0f16,#52060b 60%,#280205);animation:zbbd .62s cubic-bezier(.3,.6,.6,1) both}.zb .zbm{left:9px;top:13px;width:14px;height:12px;border-radius:50%;background:radial-gradient(rgba(120,8,14,.55),rgba(90,5,10,.25) 50%,rgba(60,0,5,0) 72%);animation:zbbm .35s ease-out forwards}@keyframes zbbm{0%{transform:scale(.4);opacity:1}100%{transform:translateX(-4px) scale(1.3);opacity:0}}
+.zb .zpf{left:-4px;bottom:-2px;width:48px;height:16px;border-radius:50%;background:radial-gradient(rgba(190,200,190,.75),rgba(190,200,190,0) 70%);animation:zbpf .7s ease-out .35s both}
 @keyframes zbrun{0%{transform:translateX(0) scaleX(1)}49.99%{transform:translateX(var(--zw,120px)) scaleX(1)}50%{transform:translateX(var(--zw,120px)) scaleX(-1)}100%{transform:translateX(0) scaleX(-1)}}
 @keyframes zbl{0%{transform:translateY(0)}100%{transform:translateY(-1.5px)}}
 @keyframes zba{0%,100%{transform:translateY(0)}50%{transform:translateY(1px)}}
 @keyframes zbhit{0%{transform:translateX(-4px) rotate(-12deg);filter:brightness(2.6) saturate(0)}45%{filter:none}100%{transform:none}}
 @keyframes zbdie{0%{transform:none}35%{transform:translateX(-3px) rotate(-30deg)}75%{transform:translateX(-6px) rotate(-90deg);opacity:1}100%{transform:translateX(-6px) rotate(-90deg);opacity:0}}
 @keyframes zbf{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.4);opacity:0}}
-@keyframes zbbd{0%{transform:translate(0,0);opacity:1}100%{transform:translate(var(--dx),var(--dy));opacity:0}}
+@keyframes zbbd{0%{transform:translate(0,0) scale(1);opacity:1}45%{transform:translate(calc(var(--dx)*.65),var(--dy)) scale(1,1.15);opacity:1}100%{transform:translate(var(--dx),calc(var(--dy) + 20px)) scale(.8,1.5);opacity:0}}
 @keyframes zbpf{0%{transform:scale(.3);opacity:0}30%{opacity:1}100%{transform:scale(1.5) translateY(-6px);opacity:0}}
 .zb.zbs,.zb.zbs svg{width:26px;height:32px}.zb.zbs svg{filter:drop-shadow(0 0 2px #000) drop-shadow(0 0 3px rgba(150,0,12,.75))}.zb.zbs .zh2{left:0;top:-7px;width:26px;height:3px}.zb.zbs .zh2 b{background:#a3121b}
 .zb.zbs::after{content:"";position:absolute;left:-6px;right:-6px;top:4px;bottom:-4px;z-index:-1;border-radius:50%;background:radial-gradient(rgba(120,0,10,.55),rgba(30,0,5,.25) 45%,rgba(0,0,0,0) 70%);animation:zbau 1.7s steps(6) infinite;pointer-events:none}
@@ -241,7 +241,7 @@ header h1 small{letter-spacing:.3em;font-size:.68rem;text-transform:uppercase;co
 .zsl{position:absolute;bottom:2px;width:24px;height:24px;margin-left:-12px;border-radius:50%;border-right:2.5px solid #ffd36b;box-shadow:4px 0 8px -2px rgba(255,120,20,.9);filter:blur(.4px);pointer-events:none;z-index:3;animation:zhrs .3s ease-out forwards}
 .zb.zko{animation-play-state:paused}
 .zb.zko .zl1,.zb.zko .zl2,.zb.zko .za{animation-play-state:paused}
-.zb.zko svg{animation:zbko .8s cubic-bezier(.2,.7,.4,1) forwards}
+.zb.zko .zim{transform-origin:50% 55%}.zb.zko svg,.zb.zko .zim{animation:zbko .8s cubic-bezier(.2,.7,.4,1) forwards}
 .zb.zko .zh2{opacity:0}
 .zhr.zhid .zhs,.zhr.zhid::before{animation-play-state:paused}.zhr.zhid::before{opacity:0}
 @keyframes zhfl{0%{transform:translate(0,0) scale(1);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(.25);opacity:0}}
@@ -936,20 +936,20 @@ var HL=null,HLNO=null;function hlGo(){if(!HL)return;var n=HL,no=HLNO;HL=null;HLN
 var ZBS={ln:null,t:0},ZBMAX=6,ZBEV=40000;
 function zbInit(){try{var ln=$("#main .hcap i");if(!ln||ZBS.ln===ln||matchMedia("(prefers-reduced-motion: reduce)").matches)return;ZBS.ln=ln;clearInterval(ZBS.t);zbAdd(ln);setTimeout(function(){if(ln.isConnected)zbAdd(ln)},4000);setTimeout(function(){if(ln.isConnected)zbAdd(ln)},8000);zhrInit(ln);zbGun(ln);
 ZBS.t=setInterval(function(){if(!ln.isConnected){clearInterval(ZBS.t);ZBS.ln=null;return}if(!document.hidden&&ln.querySelectorAll(".zb").length<ZBMAX)zbAdd(ln)},ZBEV)}catch(e){}}
-function zbAdd(ln,inn){try{var b=document.createElement("button");b.type="button";b.className="zb zin";var bs=false;b.setAttribute("aria-label","ゾンビ（タップで撃つ）");
+function zbAdd(ln,inn){try{var lr=ln.getBoundingClientRect().right;if([].some.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){return z.getBoundingClientRect().left>lr-90})){setTimeout(function(){if(ln.isConnected&&(inn||ln.querySelectorAll(".zb").length<ZBMAX))zbAdd(ln,inn)},1000);return}var b=document.createElement("button");b.type="button";b.className="zb zin";var bs=false;b.setAttribute("aria-label","ゾンビ（タップで撃つ）");
 var sv='<span class="zh2"><b></b></span><span class="zim"></span>';
-b.innerHTML=sv;ln.appendChild(b);var ZHP=bs?24:8,hp=ZHP,busy=0;
-function sz(){if(!b.isConnected){removeEventListener("resize",sz);return}var w=Math.max(40,ln.offsetWidth-18);b.style.setProperty("--zw",w+"px");b.style.setProperty("--zt",(w*2/(bs?9:20)).toFixed(1)+"s");b.style.setProperty("--zi",((w+24)/ZIV).toFixed(1)+"s")}
+b.innerHTML=sv;ln.appendChild(b);var ZHP=bs?24:5,hp=ZHP,busy=0;
+function sz(){if(!b.isConnected){removeEventListener("resize",sz);return}var w=Math.max(40,ln.offsetWidth-30);b.style.setProperty("--zw",w+"px");b.style.setProperty("--zt",(w*2/(bs?9:20)).toFixed(1)+"s");b.style.setProperty("--zi",((w+24)/ZIV).toFixed(1)+"s")}
 sz();b.addEventListener("animationend",function(ev){if(ev.target===b&&hp>0){b.remove();if(io)io.disconnect();if(!inn)setTimeout(function(){if(ln.isConnected&&ln.querySelectorAll(".zb").length<ZBMAX)zbAdd(ln)},8000)}});addEventListener("resize",sz,{passive:true});
 var io=null;if(window.IntersectionObserver){io=new IntersectionObserver(function(es){es.forEach(function(e){b.classList.toggle("zp",!e.isIntersecting)})});io.observe(b)}
 function fx(c,st){var e=document.createElement("span");e.className="zs "+c;if(st)e.setAttribute("style",st);b.appendChild(e);setTimeout(function(){e.remove()},1100)}
 b.zbHit=function(){if(hp<=0)return;hit(bs?6:hp,1)};
 b.addEventListener("click",function(ev){ev.stopPropagation();if(busy||hp<=0)return;hit(1,0)});
-function hit(n,ko){hp=Math.max(0,hp-n);b.classList.add("zhit");b.style.setProperty("--zhp",(hp/ZHP*100)+"%");b.classList.toggle("zmid",hp<=ZHP/2);b.classList.toggle("zlo",hp<=ZHP/4);fx("zf");for(var k=0;k<4;k++)fx("zbd","--dx:"+(-4-Math.random()*8).toFixed(1)+"px;--dy:"+(-6+Math.random()*12).toFixed(1)+"px");
+function hit(n,ko){hp=Math.max(0,hp-n);if(!ko)b.classList.add("zhit");b.style.setProperty("--zhp",(hp/ZHP*100)+"%");b.classList.toggle("zmid",hp<=ZHP/2);b.classList.toggle("zlo",hp<=ZHP/4);fx("zf");for(var k=0;k<11;k++){var bz=(1+Math.random()*2.2).toFixed(1);fx("zbd","--dx:"+(-4-Math.random()*20).toFixed(1)+"px;--dy:"+(-12+Math.random()*11).toFixed(1)+"px;width:"+bz+"px;height:"+bz+"px;animation-delay:"+(Math.random()*.06).toFixed(2)+"s")}fx("zbm");
 if(hp>0){busy=1;b.classList.remove("zh");void b.offsetWidth;b.classList.add("zh");setTimeout(function(){b.classList.remove("zh");busy=0},260)}
 else{if(ko){var mt=getComputedStyle(b).transform,fl=/^matrix\(-/.test(mt);b.style.setProperty("--kx",(fl?-30:30)+"px");b.style.setProperty("--kr",(fl?-260:260)+"deg");b.classList.add("zko")}else b.classList.add("zd");fx("zpf");if(bs){var hc=ln.parentNode;hc.classList.add("zshk");setTimeout(function(){hc.classList.remove("zshk")},450);for(k=0;k<14;k++)fx("zcf","--dx:"+(Math.random()*60-30).toFixed(1)+"px;--dy:"+(-10-Math.random()*26).toFixed(1)+"px;background:"+["#a3121b","#3a0a0e","#140709","#6b0d12"][k%4])}setTimeout(function(){b.remove();if(io)io.disconnect();if(!inn)setTimeout(function(){if(ln.isConnected&&ln.querySelectorAll(".zb").length<ZBMAX)zbAdd(ln)},15000)},1100)}}}catch(e){}}
 /* ゾンビはすべて右端から出て、ゆっくり左へ歩き、左端で消える（速さはうさぎの子の動画と同じ比率）。キャラが出るたびに5体（4秒おき）追加する。ボスゾンビは出さない */
-var ZIV=6;
+var ZIV=7.5;
 function zbWave(ln){for(var i=0;i<5;i++)setTimeout(function(){if(ln.isConnected)zbAdd(ln,1)},i*4000)}
 function zLive(ln){return [].filter.call(ln.querySelectorAll(".zb:not(.zd):not(.zko)"),function(z){return z.zbHit})}
 function zCx(z,rl){var r=z.getBoundingClientRect();return r.left+r.width/2-rl}

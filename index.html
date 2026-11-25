@@ -925,7 +925,10 @@ function ntLink(t){return esc(t).replace(/\[\[(.+?)\]\]/g,function(m,n){return '
 function gjOf(t){var m=(t||"").match(/(伐採|採掘|麻)職人限定/);return m?m[1]+"職人":""}
 function cic(c){if(GJI[c])return "<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'>"+GJI[c]+"</svg>";return CI[c]?"<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' aria-hidden='true'>"+CI[c]+"</svg>":""}
 var MPN=null;function isMap(l){if(!MPN){MPN={};DATA.map.items.forEach(function(x){MPN[x.n]=1})}return !!MPN[l]}function mpB(l){return l.replace(/（[^）]*）$/,"")}function mpA(l,c){var m=mpB(l);return '<a class="mlk'+(c?' '+c:'')+'" data-mgo="'+esc(m)+'" href="?p=map&amp;n='+encodeURIComponent(m)+'">'+esc(l)+'</a>'}
-function locTags(d){return d=="未登録"?'<span class="lc un">未登録</span>':d.split("・").map(function(l){var g=gjOf(l);if(!g&&isMap(mpB(l)))return mpA(l,"lc");return '<span class="lc'+(g?' gjt" style="--jc:'+GJC[g]:'')+'">'+esc(l)+'</span>'}).join("")}
+/* マップ以外の入手場所：対応するページへのリンク [ページ種類, 項目名]（項目名なし＝ページの一覧） */
+var LKX={"シエルタウン":["hb","シエルタウン物資争奪戦"],"荘園":["qa","荘園って何？"],"個人荘園":["qa","荘園って何？"],"野営地":["qa","野営地に加入するメリットは？"],"毎週行動":["hb","毎週行動（通常・討伐）"],"急襲":["hb","急襲の準備"],"同居すると毎日1個ポストに届く":["qa","同居ってなに？メリットは？"],"釣り":["fish"]};
+function lkA(l){var z=LKX[l];if(!z)return "";if(!z[1])return '<a class="mlk lc" data-k="'+z[0]+'" href="?p='+z[0]+'">'+esc(l)+'</a>';var I=DATA[z[0]].items.map(function(x){return x.n}).indexOf(z[1]);return I<0?"":'<a class="mlk lc" data-s="'+z[0]+'" data-i="'+I+'" href="?p='+z[0]+'&amp;n='+encodeURIComponent(z[1])+'">'+esc(l)+'</a>'}
+function locTags(d){return d=="未登録"?'<span class="lc un">未登録</span>':d.split("・").map(function(l){var g=gjOf(l);if(!g&&isMap(mpB(l)))return mpA(l,"lc");if(!g&&LKX[l]){var la=lkA(l);if(la)return la}return '<span class="lc'+(g?' gjt" style="--jc:'+GJC[g]:'')+'">'+esc(l)+'</span>'}).join("")}
 var EFF=[
 ["ダメージアップ",/ダメージアップ|与ダメージ|ダメージバフ|追加ダメージ|火力|ダメージが[\d.]+%(アップ|上昇|上が)|%のダメージが上昇|ダメージ決算時|特殊弾ダメージ/,["強撃連発","一点撃破"],["連続CR","バーストリッパー"]],
 ["CR率",/CR率/],

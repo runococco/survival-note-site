@@ -18,10 +18,10 @@ var css='html.svon,html.svon body{overflow-x:hidden!important;overflow-x:clip!im
 '.svck{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;animation:svck 4.2s linear forwards}'+
 '@keyframes svck{0%{transform:scale(.6)}6%{transform:scale(1)}70%{opacity:1}to{opacity:0;transform:scale(1)}}'+
 '.svck.svgo{animation:svgo .25s linear forwards}@keyframes svgo{to{opacity:0}}'+
-'.svH{position:fixed;left:0;right:0;top:0;z-index:2147483100;display:flex;align-items:center;gap:8px;padding:calc(env(safe-area-inset-top) + 8px) 10px 8px;background:linear-gradient(rgba(10,0,0,.85),rgba(10,0,0,0));color:#fff;font:700 15px/1.2 system-ui,sans-serif;pointer-events:none}'+
-'.svH b{font-variant-numeric:tabular-nums;text-shadow:0 0 6px #f00}.svH .svt{min-width:84px}.svH .svs{flex:1;text-align:center;font-size:17px}'+
-'.svH button,.svM button{pointer-events:auto;font:700 13px/1 system-ui,sans-serif;color:#fff;background:#3a0a0c;border:1px solid #d0262b;border-radius:8px;padding:9px 11px;cursor:pointer!important;touch-action:manipulation}'+
-'.svH .svt.svlow b{color:#ff4d4d;animation:svbl .5s steps(2) infinite}@keyframes svbl{50%{opacity:.35}}'+
+'.svH{position:fixed;left:0;right:0;top:0;z-index:2147483100;display:flex;align-items:center;gap:14px;padding:calc(env(safe-area-inset-top) + 8px) 12px 10px;background:linear-gradient(rgba(6,2,4,.92),rgba(6,2,4,.72));border-bottom:1px solid rgba(255,60,60,.28);color:#fff;font:800 11px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.18em;pointer-events:none}'+
+'.svH .svt,.svH .svs{display:flex;flex-direction:column;gap:3px;color:rgba(255,255,255,.5)}.svH b{font:italic 800 22px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.02em;color:#fff;font-variant-numeric:tabular-nums;text-shadow:0 0 10px rgba(255,40,40,.55)}.svH .svt{min-width:46px}.svH .svs{flex:1}'+
+'.svH button,.svM button{pointer-events:auto;font:800 12px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.22em;color:#fff;background:transparent;border:1px solid rgba(255,80,80,.7);border-radius:0;padding:10px 14px 10px 16px;cursor:pointer!important;touch-action:manipulation;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}'+
+'.svH .svt.svlow b{color:#ff4040;animation:svbl .5s steps(2) infinite}@keyframes svbl{50%{opacity:.35}}.svH button{background:rgba(10,3,5,.92)}.svH .svbar{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,#ff2a2a,#ff7a3a);box-shadow:0 0 8px #f22;transform-origin:0 50%}'+
 '.svz{position:absolute;left:0;top:0;background:url('+SPR+') 0 0 no-repeat;image-rendering:pixelated;transform-origin:50% 100%;will-change:transform;filter:drop-shadow(0 0 8px rgba(110,190,255,.35))}'+
 '.svz.svdd{filter:sepia(1) saturate(6) hue-rotate(-40deg) brightness(.8)}'+
 '.svp{position:absolute;left:0;top:0;width:6px;height:6px;border-radius:1px;will-change:transform,opacity}'+
@@ -30,25 +30,27 @@ var css='html.svon,html.svon body{overflow-x:hidden!important;overflow-x:clip!im
 '.svpt{position:absolute;margin:-10px 0 0 -30px;width:60px;text-align:center;font:900 18px/1 system-ui,sans-serif;color:#ffd23f;text-shadow:0 0 4px #000,0 0 8px #f00;animation:svpt .8s ease-out forwards}'+
 '@keyframes svpt{to{transform:translateY(-40px);opacity:0}}'+
 '.svB{position:absolute;inset:0;background:rgba(200,0,0,.35);animation:svgo .45s ease-out forwards}'+
-'.svC{position:absolute;left:0;right:0;top:42%;text-align:center;font:900 44px/1 system-ui,sans-serif;color:#ff3b3b;text-shadow:0 0 10px #000,0 0 18px #f00;letter-spacing:2px;animation:svcd .8s ease-out forwards}'+
+'.svC{position:absolute;left:0;right:0;top:42%;text-align:center;font:italic 800 54px/1 "Helvetica Neue",Arial,sans-serif;color:#fff;text-shadow:3px 0 rgba(255,0,40,.8),-3px 0 rgba(0,220,255,.35),0 0 24px rgba(255,0,0,.6);letter-spacing:.12em;animation:svcd .8s ease-out forwards}.svC.svw{font-size:38px;letter-spacing:.3em}'+
 '@keyframes svcd{from{transform:scale(1.8);opacity:0}25%{transform:scale(1);opacity:1}80%{opacity:1}to{opacity:0}}'+
-'.svM{position:fixed;inset:0;z-index:2147483200;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.6);animation:svin .25s ease-out}'+
+'.svM{position:fixed;inset:0;z-index:2147483200;display:flex;align-items:center;justify-content:center;padding:16px;background:radial-gradient(rgba(30,0,0,.55),rgba(0,0,0,.82));animation:svin .25s ease-out}'+
 '@keyframes svin{from{opacity:0}}'+
-'.svM>div{width:min(320px,100%);background:#120507;border:1px solid #8a1a1e;border-radius:12px;padding:22px 18px 18px;text-align:center;color:#eee;font:15px/1.6 system-ui,sans-serif;box-shadow:0 0 30px rgba(200,0,0,.35)}'+
-'.svM h2{margin:0 0 6px;font-size:21px;color:#ff3b3b;text-shadow:0 0 8px rgba(255,0,0,.7);animation:svjt 2.2s steps(1) infinite}'+
+'.svM>div{position:relative;width:min(330px,100%);background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px),linear-gradient(160deg,#16070a,#070305 70%);border:1px solid rgba(255,70,70,.22);padding:26px 22px 22px;text-align:center;color:#eee;font:14px/1.6 "Zen Kaku Gothic New",system-ui,sans-serif;box-shadow:0 0 40px rgba(180,0,0,.3);clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)}'+
+'.svM>div:before,.svM>div:after{content:"";position:absolute;width:18px;height:18px;border:2px solid #ff3434}.svM>div:before{right:6px;top:6px;border-left:0;border-bottom:0}.svM>div:after{left:6px;bottom:6px;border-right:0;border-top:0}'+
+'.svM .svtg{display:inline-flex;align-items:center;gap:8px;font:800 10px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.4em;color:#ff4a4a;margin-bottom:14px}.svM .svtg i{width:7px;height:7px;background:#ff2a2a;box-shadow:0 0 8px #f00;animation:svbl 1s steps(2) infinite}'+
+'.svM h2{margin:0 0 10px;font:400 27px/1.25 "Dela Gothic One",sans-serif;letter-spacing:.06em;color:#fff;text-shadow:2px 0 rgba(255,0,40,.75),-2px 0 rgba(0,200,255,.3);animation:svjt 2.2s steps(1) infinite}'+
 '@keyframes svjt{0%,100%{transform:none}91%{transform:translate(1px,-1px)}93%{transform:translate(-2px,1px)}95%{transform:none}}'+
-'.svM p{margin:0 0 16px;color:#bbb;font-size:13px}.svM .svbt{display:flex;gap:10px;justify-content:center}'+
-'.svM button{min-width:96px;padding:12px 14px;font-size:15px}.svM button.svy{background:#b3161c;border-color:#ff4d4d}'+
-'.svM .svsc{font:900 46px/1.1 system-ui,sans-serif;color:#ffd23f;text-shadow:0 0 10px rgba(255,80,0,.7);margin:2px 0 4px;font-variant-numeric:tabular-nums}'+
-'.svM .svrs{display:grid;grid-template-columns:auto auto;justify-content:center;gap:4px 18px;margin:0 0 16px;font-size:14px;text-align:left}.svM .svrs b{text-align:right;font-variant-numeric:tabular-nums}'+
-'.svM .svbe{color:#ff8a3d;font-weight:700}';
+'.svM .svsub{margin:0 0 22px;font:700 10px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.32em;color:rgba(255,255,255,.45)}.svM .svbt{display:flex;gap:10px;justify-content:center}'+
+'.svM button{flex:1;max-width:130px;padding:14px 10px;font-size:13px}.svM button.svy{background:linear-gradient(135deg,#d11a22,#8c0b12);border-color:#ff5050;box-shadow:0 0 18px rgba(255,0,0,.35)}.svM button.svn{color:rgba(255,255,255,.75)}'+
+'.svM .svsc{font:italic 800 58px/1 "Helvetica Neue",Arial,sans-serif;color:#fff;text-shadow:3px 0 rgba(255,0,40,.7),0 0 22px rgba(255,40,0,.45);margin:6px 0 8px;font-variant-numeric:tabular-nums;letter-spacing:.02em}'+
+'.svM .svrs{display:grid;grid-template-columns:1fr auto;gap:0;margin:0 0 22px;text-align:left;border-top:1px solid rgba(255,255,255,.08)}.svM .svrs>*{padding:9px 2px;border-bottom:1px solid rgba(255,255,255,.08)}.svM .svrs span{font:800 11px/1.3 "Helvetica Neue",Arial,sans-serif;letter-spacing:.24em;color:rgba(255,255,255,.55)}.svM .svrs span small{display:block;font:500 10px/1.3 "Zen Kaku Gothic New",sans-serif;letter-spacing:.1em;color:rgba(255,255,255,.35)}.svM .svrs b{text-align:right;font:italic 800 20px/1.6 "Helvetica Neue",Arial,sans-serif;font-variant-numeric:tabular-nums}'+
+'.svM .svbe{display:inline-block;margin:0 0 18px;font:800 10px/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.3em;color:rgba(255,255,255,.5)}.svM .svbe.svnr{color:#111;background:#ffcf3a;padding:5px 8px 5px 10px;box-shadow:0 0 14px rgba(255,200,0,.5)}';
 
 function addCss(){if(D.getElementById("svcss"))return;var s=el("style");s.id="svcss";s.textContent=css;D.head.appendChild(s)}
 
 // ---------- 確認ダイアログ ----------
 function modal(h){var m=el("div","svM",D.body);m.setAttribute("data-sv","1");var b=el("div","",m);b.setAttribute("role","dialog");b.setAttribute("aria-modal","true");b.innerHTML=h;return m}
 function ask(){addCss();if(st||D.querySelector(".svM"))return;H.classList.add("svred");
-var m=modal('<h2>サバイバルしますか？</h2><p>1分間、出てくるゾンビをタップで撃つ。<br>サイトの枠も撃てる。</p><div class="svbt"><button type="button" class="svy">YES</button><button type="button" class="svn">NO</button></div>');
+var m=modal('<div class="svtg"><i></i>SURVIVAL MODE</div><h2>覚悟はいいか？</h2><div class="svsub">60 SEC ／ TAP TO SHOOT</div><div class="svbt"><button type="button" class="svy">YES</button><button type="button" class="svn">NO</button></div>');
 var y=m.querySelector(".svy");try{y.focus({preventScroll:true})}catch(x){}
 m.querySelector(".svn").onclick=function(){m.remove();H.classList.remove("svred")};
 y.onclick=function(){m.remove();start()};
@@ -58,12 +60,12 @@ m.addEventListener("click",function(e){if(e.target===m){m.remove();H.classList.r
 function start(){addCss();if(st)return;H.classList.add("svon","svred");
 st={score:0,kill:0,brk:0,shot:0,hit:0,zs:[],cks:[],blown:[],hid:[],anims:[],pts:0,hits:new WeakMap(),t0:0,end:0,raf:0,sp:0,on:false,over:false};
 st.V=el("div","svV",D.body);st.F=el("div","svF",D.body);st.L=el("div","svL",D.body);
-var h=el("div","svH",D.body);h.setAttribute("data-sv","1");h.innerHTML='<span class="svt">残り <b>60</b>秒</span><span class="svs">SCORE <b>0</b></span><button type="button">サバイバル終了</button>';
-st.H=h;st.tE=h.querySelector(".svt");st.tB=st.tE.querySelector("b");st.sB=h.querySelector(".svs b");
+var h=el("div","svH",D.body);h.setAttribute("data-sv","1");h.innerHTML='<span class="svt">TIME<b>60</b></span><span class="svs">SCORE<b>0</b></span><button type="button" aria-label="サバイバル終了">EXIT</button><i class="svbar"></i>';
+st.H=h;st.tE=h.querySelector(".svt");st.tB=st.tE.querySelector("b");st.bar=h.querySelector(".svbar");st.sB=h.querySelector(".svs b");
 h.querySelector("button").onclick=quit;
 on(true);
-count(["3","2","1","START!"],function(){st.on=true;st.t0=performance.now();st.end=st.t0+GAME*1000;st.next=st.t0+300;loop()})}
-function count(a,cb){var i=0;(function n(){if(!st)return;if(i>=a.length){cb();return}var c=el("div","svC",st.L);c.textContent=a[i++];setTimeout(function(){c.remove()},800);setTimeout(n,i==a.length?350:650)})()}
+count(["3","2","1","SURVIVE"],function(){st.on=true;st.t0=performance.now();st.end=st.t0+GAME*1000;st.next=st.t0+300;loop()})}
+function count(a,cb){var i=0;(function n(){if(!st)return;if(i>=a.length){cb();return}var c=el("div","svC"+(a[i].length>3?" svw":""),st.L);c.textContent=a[i++];setTimeout(function(){c.remove()},800);setTimeout(n,i==a.length?350:650)})()}
 function clearPlay(){if(!st)return;cancelAnimationFrame(st.raf);st.on=false;st.anims.forEach(function(a){try{a.cancel()}catch(x){}});st.anims=[];st.hid.forEach(function(h){h[0].style.visibility=h[1]});st.hid=[];st.blown=[];st.L.textContent="";st.F.textContent="";st.zs=[];st.cks=[];st.pts=0}
 function quit(){if(!st)return;clearPlay();[st.V,st.F,st.L,st.H].forEach(function(e){e.remove()});[].forEach.call(D.querySelectorAll(".svM"),function(m){m.remove()});on(false);st=null;H.classList.remove("svon","svred")}
 function again(){quit();start()}
@@ -147,7 +149,7 @@ function add(n,x,y){st.score+=n;st.sB.textContent=st.score;if(n>=30){var p=el("d
 
 // ---------- ループ ----------
 function loop(){if(!st||!st.on)return;st.raf=requestAnimationFrame(loop);if(st.pause)return;var now=performance.now(),left=Math.max(0,st.end-now),sec=Math.ceil(left/1000);
-if(st.tB.textContent!=sec){st.tB.textContent=sec;st.tE.classList.toggle("svlow",sec<=10)}
+st.bar.style.transform="scaleX("+(left/GAME/1000).toFixed(4)+")";if(st.tB.textContent!=sec){st.tB.textContent=sec;st.tE.classList.toggle("svlow",sec<=10)}
 if(left<=0){finish();return}
 if(now>=st.next){spawn(now);var prog=(now-st.t0)/(GAME*1000);st.next=now+rnd(900,1500)*(1-prog*.55)}
 st.zs.slice().forEach(function(z){if(z.dead)return;if(now-z.t0>z.life){bite(z);return}place(z,now)})}
@@ -156,10 +158,10 @@ function finish(){st.on=false;cancelAnimationFrame(st.raf);st.tB.textContent="0"
 st.zs.forEach(function(z){z.e.animate([{opacity:1},{opacity:0}],{duration:400,fill:'forwards'})});
 var best=0,nb=false;try{best=+localStorage.getItem("svbest")||0;if(st.score>best){localStorage.setItem("svbest",st.score);nb=best>0;best=st.score}}catch(x){best=Math.max(best,st.score)}
 var acc=st.shot?Math.round(st.hit/st.shot*100):0;
-var c=el("div","svC",st.L);c.textContent="TIME UP";
-setTimeout(function(){if(!st)return;var m=modal('<h2>サバイバル終了</h2><div class="svsc">'+st.score+'</div>'+(nb?'<p class="svbe">ベスト更新！</p>':'<p>ベスト '+best+'</p>')+
-'<div class="svrs"><span>倒したゾンビ</span><b>'+st.kill+'体</b><span>吹き飛ばした枠</span><b>'+st.brk+'個</b><span>命中率</span><b>'+acc+'%</b></div>'+
-'<div class="svbt"><button type="button" class="svy">もう一度</button><button type="button" class="svn">終了</button></div>');
+var c=el("div","svC svw",st.L);c.textContent="TIME UP";
+setTimeout(function(){if(!st)return;var m=modal('<div class="svtg"><i></i>RESULT</div><h2>生還</h2><div class="svsc">'+st.score+'</div>'+(nb?'<div class="svbe svnr">NEW RECORD</div>':'<div class="svbe">BEST '+best+'</div>')+
+'<div class="svrs"><span>KILLS<small>倒したゾンビ</small></span><b>'+st.kill+'</b><span>DESTROYED<small>吹き飛ばした枠</small></span><b>'+st.brk+'</b><span>ACCURACY<small>命中率</small></span><b>'+acc+'%</b></div>'+
+'<div class="svbt"><button type="button" class="svy">RETRY</button><button type="button" class="svn">EXIT</button></div>');
 m.querySelector(".svy").onclick=again;m.querySelector(".svn").onclick=quit},1100)}
 
 W.SV={ask:ask,start:start,quit:quit};

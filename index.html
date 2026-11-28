@@ -356,6 +356,24 @@ body[data-sec="item"] #main .anc .ang .anv img,body[data-sec="item"] #main .anc 
 body[data-sec="item"] #main .anc .ang .anv b{font-size:.66rem!important;line-height:1.3;font-weight:600;padding:0}
 body[data-sec="item"] #main .ang .anv.open{border-color:var(--ac)!important;background:color-mix(in srgb,var(--ac) 10%,var(--sf))}
 #main .anpanel img{object-fit:contain!important}
+/* 苗・種の画像とプレースホルダーを同じ枠に収める */
+body[data-sec="item"] #main .anc:is([data-an="苗"],[data-an="種"]) .anv>img,
+body[data-sec="item"] #main .anc:is([data-an="苗"],[data-an="種"]) .anv>.noimg{
+  box-sizing:border-box;
+  display:block;
+  flex:none;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  aspect-ratio:2/1;
+  object-fit:contain;
+  overflow:hidden;
+}
+body[data-sec="item"] #main .anc:is([data-an="苗"],[data-an="種"]) .anpanel img{
+  box-sizing:border-box;
+  max-width:36%;
+  height:auto;
+}
 /* ===== 素材タブ：2行 ===== */
 body[data-sec="item"] #main .chips.g9{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:5px}
 body[data-sec="item"] #main .chips.g9 .chip{font-size:.74rem;padding:7px 0;letter-spacing:.02em}
